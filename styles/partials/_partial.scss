@@ -1,0 +1,33 @@
+$darkblack: #000000;
+$black: #323232;
+$white: #FFFFFF;
+$silver: #AFAFAF;
+$alabaster: #FAFAFA;
+$mercury: #E1E1E1;
+
+
+
+
+@mixin flex ($flex-direction, $justify-content, $align-items) {
+    display: flex;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+@mixin text-style ($font-size, $line-height, $font-weight) {
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: $font-weight;
+}
+    
+@mixin tablet {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: 1280px) {
+        @content;
+    }
+}
