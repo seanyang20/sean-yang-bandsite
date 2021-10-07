@@ -70,8 +70,7 @@ h1 {
     }
     &-links {
         width: 100vw;
-        @include flex (row, none, center);
-        
+        @include flex (row, flex-start, center);
 
         @include tablet {
             width: 33.3%;
@@ -161,6 +160,10 @@ h1 {
     padding-bottom: 0.75rem;
     cursor: pointer;
     font-weight: bold;
+
+    @include tablet {
+        padding-bottom: 20px;
+    }
 }
 #target-2:target {
     color: $white;
@@ -168,6 +171,10 @@ h1 {
     padding-bottom: 0.75rem;
     cursor: pointer;
     font-weight: bold;
+
+    @include tablet {
+        padding-bottom: 20px;
+    }
     
 }
 
@@ -319,15 +326,13 @@ h1 {
         }
     }
 }
-.img-right {
-    padding-right: 0;
-}
+
 
 /* Footer */
 
 .footer {
     width: 100vw;
-    height: 700px;
+    height: 730px;
     background-color: $black;
     @include flex(column, center, center);
     padding: 0 1rem 0 1rem;
@@ -344,7 +349,7 @@ h1 {
 
     &-header {
         width: 100%;
-        @include flex(column, none, center);
+        @include flex(column, flex-start, center);
 
         @include tablet {
             @include flex(row, flex-start, center);  
@@ -369,6 +374,14 @@ h1 {
                 padding: 0 0 0 0;
             }
         }
+
+        &__logo {
+            display: none;
+
+            @include tablet {
+                display: block;
+            }
+        }
     
     }
     &-media {
@@ -380,10 +393,7 @@ h1 {
             padding: 36px 0 36px 0;
         }
     }
-    &__logo {
-    
-
-    }
+   
 
     &-card {
         width: 100%;
@@ -421,16 +431,18 @@ h1 {
         width: 100%;
         background-color: $black;
         padding: 64px 1rem 1rem 1rem;
-
+        
         @include tablet {
             display: none;
         }
+       
 
         &-img {
             width: 18.5rem;
             max-width: 7.5rem;
             height: 1.25rem;
             max-height: 1.25rem;
+            
         }
     }
 
