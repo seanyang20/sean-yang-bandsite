@@ -41,10 +41,12 @@ h1 {
 .header {
     @include flex(row, flex-start, center);
     flex-wrap: wrap;
+    background-color: $black;
  
     @include tablet {
         @include flex(row, flex-start, center);
         flex-wrap: nowrap;
+       
     }
 
     &-logo {
@@ -54,7 +56,7 @@ h1 {
         padding: 1rem 1rem 0rem 1rem;
 
         @include tablet {
-            width: 33%;
+            width: 16.67%;
             padding: 16px 24px 16px 24px;
         }
      
@@ -69,8 +71,11 @@ h1 {
     &-links {
         width: 100vw;
         @include flex (row, none, center);
+        
 
-     
+        @include tablet {
+            width: 33.3%;
+        }
         
         &__biography {
             text-align: center;
@@ -80,9 +85,11 @@ h1 {
             padding: 1rem 0 1rem 1rem;
             width: 50%;
             font-family: "Avenir Next Demi";
+            @include text-style (14px, 22px);
 
             @include tablet {
-                padding: 24px 0 24px 24px;
+                padding: 24px 24px 24px 24px;
+                
             }
 
       
@@ -117,9 +124,10 @@ h1 {
             padding: 1rem 1rem 1rem 0;
             width: 50%;
             font-family: "Avenir Next Demi";
+            @include text-style (14px, 22px);
             
             @include tablet {
-                padding: 24px 24px 24px 0;
+                padding: 24px 24px 24px 24px;
             }
         
             &:hover {
@@ -183,9 +191,12 @@ h1 {
    
     &__title {
         font-family: "Avenir Next Demi";
-        font-size: 24px;
-        line-height: 32px;
+        @include text-style (24px, 32px);
         color: $white;
+
+        @include tablet {
+            @include text-style (60px, 68px);
+        }
    
     }
 
@@ -198,12 +209,14 @@ h1 {
    
 }
 .section-header {
-    @include text-style (1.5rem, 2rem, 700);
+    @include text-style (1.5rem, 2rem);
     margin: 1.5rem 1rem 1rem 1rem;
     font-family: "Avenir Next Demi";
 
     @include tablet {
+        @include text-style (36px, 44px);
         margin: 36px 24px 24px 24px;
+        
     }
 }
 .band-img {
@@ -218,30 +231,34 @@ h1 {
     }
 }
 .quote {
-    @include text-style (.875rem, 1.375rem, 700);
+    @include text-style (.875rem, 1.375rem);
     padding: 1rem 1rem 0 1rem;
     font-family: "Avenir Next Demi";
 
     @include tablet {
+        @include text-style (24px, 32px);
         padding: 24px 80px 0 80px;
     }
 }
 .quote-author {
-    @include text-style (.875rem, 1.375rem, 700);
+    @include text-style (.875rem, 1.375rem);
     padding: 1rem 1rem 1.5rem 1rem;
     font-family: "Avenir Next Demi";
 
     @include tablet {
+        @include text-style (14px, 22px);
         padding: 24px 80px 36px 80px;
     }
 }   
 .sub-header {
-    @include text-style (.875rem, 1.375rem, 600);
+    @include text-style (.875rem, 1.375rem);
     padding: 0 1rem 1rem 1rem;
     font-family: "Avenir Next Regular";
 
     @include tablet {
+        @include text-style (24px, 32px);
         padding: 0 80px 24px 80px;
+        font-family: "Avenir Next Demi";
     }
 }
 .text-container {
@@ -257,11 +274,12 @@ h1 {
     }
 }
 .body-text{
-    @include text-style (.8125rem, 1.125rem, 400);
+    @include text-style (.8125rem, 1.125rem);
     padding: 0 1rem 1rem 1rem;
     font-family: "Avenir Next Regular";
 
     @include tablet {
+        @include text-style (14px, 22px);
         padding: 0 0 0 0;
         width: 292px;
     }
@@ -279,11 +297,12 @@ h1 {
 
 
     &__header {
-        @include text-style (1.5rem, 2rem, 700);
+        @include text-style (1.5rem, 2rem);
         padding: 1.5rem 1rem 1rem 0;
         font-family: "Avenir Next Demi";
 
         @include tablet {
+            @include text-style (36px, 44px);
             padding: 32px 24px 24px 0;
         }
     }
@@ -341,12 +360,12 @@ h1 {
         &__title {
             color: $white;
             width: 100%;
-            @include text-style (1.5rem, 2rem, 700);
+            @include text-style (1.5rem, 2rem);
             padding: 40px 0 0 0;
             font-family: "Avenir Next Demi";
 
             @include tablet {
-                
+                @include text-style (36px, 44px);
                 padding: 0 0 0 0;
             }
         }
@@ -368,11 +387,14 @@ h1 {
 
     &-card {
         width: 100%;
-        @include text-style (13px, 18px, 400);
+        @include text-style (13px, 18px);
         color: $white;
 
+        @include tablet {
+            @include text-style (14px, 20px);
+        }
+
         &__name {
-            @include text-style (13px, 18px, 700);
             padding: 16px 0 0 0;
             font-family: "Avenir Next Demi";
 
@@ -415,7 +437,7 @@ h1 {
     &-copyright {
         width: 100%;
         color: $white;
-        @include text-style (13px, 18px, 400);
+        @include text-style (13px, 18px);
         padding: 0 0 1rem 0;
         font-family: "Avenir Next Regular";
 

@@ -14,10 +14,9 @@ $mercury: #E1E1E1;
     justify-content: $justify-content;
     align-items: $align-items;
 }
-@mixin text-style ($font-size, $line-height, $font-weight) {
+@mixin text-style ($font-size, $line-height) {
     font-size: $font-size;
     line-height: $line-height;
-    font-weight: $font-weight;
 }
     
 @mixin tablet {

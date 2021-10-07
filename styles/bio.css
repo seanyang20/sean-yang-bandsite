@@ -37,6 +37,7 @@ h1 {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  background-color: #323232;
 }
 @media screen and (min-width: 768px) {
   .header {
@@ -55,7 +56,7 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   .header-logo {
-    width: 33%;
+    width: 16.67%;
     padding: 16px 24px 16px 24px;
   }
 }
@@ -72,6 +73,11 @@ h1 {
   justify-content: none;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .header-links {
+    width: 33.3%;
+  }
+}
 .header-links__biography {
   text-align: center;
   background-color: #323232;
@@ -80,10 +86,12 @@ h1 {
   padding: 1rem 0 1rem 1rem;
   width: 50%;
   font-family: "Avenir Next Demi";
+  font-size: 14px;
+  line-height: 22px;
 }
 @media screen and (min-width: 768px) {
   .header-links__biography {
-    padding: 24px 0 24px 24px;
+    padding: 24px 24px 24px 24px;
   }
 }
 .header-links__biography:hover {
@@ -117,10 +125,12 @@ h1 {
   padding: 1rem 1rem 1rem 0;
   width: 50%;
   font-family: "Avenir Next Demi";
+  font-size: 14px;
+  line-height: 22px;
 }
 @media screen and (min-width: 768px) {
   .header-links__shows {
-    padding: 24px 24px 24px 0;
+    padding: 24px 24px 24px 24px;
   }
 }
 .header-links__shows:hover {
@@ -187,6 +197,12 @@ h1 {
   line-height: 32px;
   color: #FFFFFF;
 }
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
 
 /* Body */
 .description {
@@ -196,12 +212,13 @@ h1 {
 .section-header {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
   margin: 1.5rem 1rem 1rem 1rem;
   font-family: "Avenir Next Demi";
 }
 @media screen and (min-width: 768px) {
   .section-header {
+    font-size: 36px;
+    line-height: 44px;
     margin: 36px 24px 24px 24px;
   }
 }
@@ -222,12 +239,13 @@ h1 {
 .quote {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  font-weight: 700;
   padding: 1rem 1rem 0 1rem;
   font-family: "Avenir Next Demi";
 }
 @media screen and (min-width: 768px) {
   .quote {
+    font-size: 24px;
+    line-height: 32px;
     padding: 24px 80px 0 80px;
   }
 }
@@ -235,12 +253,13 @@ h1 {
 .quote-author {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  font-weight: 700;
   padding: 1rem 1rem 1.5rem 1rem;
   font-family: "Avenir Next Demi";
 }
 @media screen and (min-width: 768px) {
   .quote-author {
+    font-size: 14px;
+    line-height: 22px;
     padding: 24px 80px 36px 80px;
   }
 }
@@ -248,13 +267,15 @@ h1 {
 .sub-header {
   font-size: 0.875rem;
   line-height: 1.375rem;
-  font-weight: 600;
   padding: 0 1rem 1rem 1rem;
   font-family: "Avenir Next Regular";
 }
 @media screen and (min-width: 768px) {
   .sub-header {
+    font-size: 24px;
+    line-height: 32px;
     padding: 0 80px 24px 80px;
+    font-family: "Avenir Next Demi";
   }
 }
 
@@ -272,12 +293,13 @@ h1 {
 .body-text {
   font-size: 0.8125rem;
   line-height: 1.125rem;
-  font-weight: 400;
   padding: 0 1rem 1rem 1rem;
   font-family: "Avenir Next Regular";
 }
 @media screen and (min-width: 768px) {
   .body-text {
+    font-size: 14px;
+    line-height: 22px;
     padding: 0 0 0 0;
     width: 292px;
   }
@@ -296,12 +318,13 @@ h1 {
 .gallery__header {
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
   padding: 1.5rem 1rem 1rem 0;
   font-family: "Avenir Next Demi";
 }
 @media screen and (min-width: 768px) {
   .gallery__header {
+    font-size: 36px;
+    line-height: 44px;
     padding: 32px 24px 24px 0;
   }
 }
@@ -368,12 +391,13 @@ h1 {
   width: 100%;
   font-size: 1.5rem;
   line-height: 2rem;
-  font-weight: 700;
   padding: 40px 0 0 0;
   font-family: "Avenir Next Demi";
 }
 @media screen and (min-width: 768px) {
   .footer-header__title {
+    font-size: 36px;
+    line-height: 44px;
     padding: 0 0 0 0;
   }
 }
@@ -390,13 +414,15 @@ h1 {
   width: 100%;
   font-size: 13px;
   line-height: 18px;
-  font-weight: 400;
   color: #FFFFFF;
 }
+@media screen and (min-width: 768px) {
+  .footer-card, .footer-card__email, .footer-card__address {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
 .footer-card__name {
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 700;
   padding: 16px 0 0 0;
   font-family: "Avenir Next Demi";
 }
@@ -438,7 +464,6 @@ h1 {
   color: #FFFFFF;
   font-size: 13px;
   line-height: 18px;
-  font-weight: 400;
   padding: 0 0 1rem 0;
   font-family: "Avenir Next Regular";
 }
