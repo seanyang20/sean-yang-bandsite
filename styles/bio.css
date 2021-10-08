@@ -63,7 +63,7 @@ h1 {
 @media screen and (min-width: 1280px) {
   .header-logo {
     width: 7.5rem;
-    padding: 1rem 1.5rem 1rem 6.5rem;
+    padding: 1rem 1.5rem 1rem 8rem;
   }
 }
 .header-logo-img {
@@ -90,20 +90,23 @@ h1 {
   color: #E1E1E1;
   text-decoration: none;
   padding: 1rem 0 1rem 1rem;
-  width: 50%;
+  width: 45%;
   font-family: "Avenir Next Demi";
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
 @media screen and (min-width: 768px) {
   .header-links__biography {
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    padding: 1.5rem 0 1.5rem 0;
+    margin: 0 1.5rem 0 1.5rem;
+    width: 10%;
   }
 }
 @media screen and (min-width: 1280px) {
   .header-links__biography {
     width: 4.935625rem;
-    padding: 1.5rem 0.5rem 1.5rem 1.5rem;
+    padding: 1.5rem 0 1.5rem 0;
+    margin: 0 0 0 2rem;
   }
 }
 .header-links__biography:hover {
@@ -111,6 +114,9 @@ h1 {
   border-bottom: 0.25rem solid #FFFFFF;
   padding-bottom: 0.75rem;
   cursor: pointer;
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
 }
 @media screen and (min-width: 768px) {
   .header-links__biography:hover {
@@ -135,20 +141,23 @@ h1 {
   color: #E1E1E1;
   text-decoration: none;
   padding: 1rem 1rem 1rem 0;
-  width: 50%;
+  width: 45%;
   font-family: "Avenir Next Demi";
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
 @media screen and (min-width: 768px) {
   .header-links__shows {
-    padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+    padding: 1.5rem 0 1.5rem 0;
+    margin: 0 1.5rem 0 1.5rem;
+    width: 3.75rem;
   }
 }
 @media screen and (min-width: 1280px) {
   .header-links__shows {
-    width: 4.935625rem;
-    padding: 1.5rem 1.5rem 1.5rem 0;
+    width: 3.4375rem;
+    padding: 1.5rem 0 1.5rem 0;
+    margin: 0 0 0 1rem;
   }
 }
 .header-links__shows:hover {
@@ -156,6 +165,9 @@ h1 {
   border-bottom: 0.25rem solid #FFFFFF;
   padding-bottom: 0.75rem;
   cursor: pointer;
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
 }
 @media screen and (min-width: 768px) {
   .header-links__shows:hover {
@@ -203,11 +215,9 @@ h1 {
 
 /* Hero */
 .hero {
-  background-image: url("../assets/images/hero-bio.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/hero-bio.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.5);
-  /* include #323232??? */
   height: 10rem;
   padding: 0 1rem 0 1rem;
   display: flex;
@@ -222,7 +232,7 @@ h1 {
 @media screen and (min-width: 1280px) {
   .hero {
     height: 39rem;
-    padding: 0 5rem 0 6.5rem;
+    padding: 0 5rem 0 8rem;
   }
 }
 .hero__title {
@@ -258,7 +268,7 @@ h1 {
 }
 @media screen and (min-width: 1280px) {
   .section-header {
-    margin: 3rem 5rem 2rem 6.5rem;
+    margin: 3rem 5rem 2rem 8rem;
   }
 }
 
@@ -276,9 +286,9 @@ h1 {
 }
 @media screen and (min-width: 1280px) {
   .band-img {
-    width: 60rem;
+    width: 54rem;
     height: 32.5rem;
-    padding: 0 10rem 0 10rem;
+    padding: 0 13rem 0 13rem;
   }
 }
 
@@ -299,7 +309,7 @@ h1 {
   .quote {
     font-size: 1.5rem;
     line-height: 2rem;
-    padding: 1.5rem 10rem 0 10rem;
+    padding: 1.5rem 13rem 0 13rem;
     width: 56%;
   }
 }
@@ -317,7 +327,7 @@ h1 {
 }
 @media screen and (min-width: 1280px) {
   .quote-author {
-    padding: 1.5rem 10rem 2.25rem 10rem;
+    padding: 1.5rem 13rem 2.25rem 13rem;
   }
 }
 
@@ -339,7 +349,7 @@ h1 {
   .sub-header {
     font-size: 1.5rem;
     line-height: 2rem;
-    padding: 0 10rem 1.5rem 10rem;
+    padding: 0 13rem 1.5rem 13rem;
     font-family: "Avenir Next Demi";
   }
 }
@@ -355,7 +365,7 @@ h1 {
   .text-container {
     display: flex;
     justify-content: baseline;
-    padding: 0 10rem 1.5rem 10rem;
+    padding: 0 13rem 1.5rem 13rem;
   }
 }
 @media screen and (min-width: 768px) {
@@ -404,7 +414,7 @@ h1 {
 }
 @media screen and (min-width: 1280px) {
   .gallery {
-    padding: 0 0 0 6.5rem;
+    padding: 0 0 1rem 8rem;
   }
 }
 .gallery__header {
@@ -431,12 +441,23 @@ h1 {
   width: 18rem;
   height: 9.375rem;
   padding: 0 1rem 1rem 0;
+  filter: grayscale(1);
+}
+.gallery__img:hover {
+  filter: grayscale(0);
 }
 @media screen and (min-width: 768px) {
   .gallery__img {
     width: 13.5rem;
     height: 7.8125rem;
     padding: 0 1.5rem 1.5rem 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .gallery__img {
+    width: 20.666669rem;
+    height: 11.25rem;
+    padding: 0 1rem 1rem 0;
   }
 }
 
@@ -466,7 +487,7 @@ h1 {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 0 6.5rem 0 6.5rem;
+    padding: 0 6.5rem 0 8rem;
     height: 24.375rem;
   }
 }
@@ -486,6 +507,11 @@ h1 {
   }
 }
 @media screen and (min-width: 768px) {
+  .footer-header div {
+    flex-basis: 14.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
   .footer-header div {
     flex-basis: 16rem;
   }
@@ -511,6 +537,13 @@ h1 {
 @media screen and (min-width: 768px) {
   .footer-header__logo {
     display: block;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .footer-header__logo {
+    margin-left: auto;
+    margin-right: 16px;
   }
 }
 .footer-media {
@@ -519,7 +552,7 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   .footer-media {
-    padding: 2.25rem 0 2.25rem 0;
+    padding: 3rem 0 3rem 0;
   }
 }
 .footer-card, .footer-card__email, .footer-card__address {
@@ -540,7 +573,7 @@ h1 {
 }
 @media screen and (min-width: 768px) {
   .footer-card__name {
-    padding: 1.5rem 0 0 0;
+    padding: 0 0 0 0;
   }
 }
 .footer-card__address {
@@ -554,11 +587,12 @@ h1 {
 }
 .footer-card__email {
   font-family: "Avenir Next Regular";
+  text-decoration: none;
 }
 .footer-logo {
   width: 100%;
   background-color: #323232;
-  padding: 4rem 1rem 1rem 1rem;
+  padding: 4rem 0 1rem 0;
 }
 @media screen and (min-width: 768px) {
   .footer-logo {
