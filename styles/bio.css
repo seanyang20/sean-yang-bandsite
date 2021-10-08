@@ -49,7 +49,7 @@ h1 {
   }
 }
 .header-logo {
-  width: 100vw;
+  width: 100%;
   background-color: #323232;
   text-align: center;
   padding: 1rem 1rem 0rem 1rem;
@@ -73,7 +73,7 @@ h1 {
   max-height: 1.25rem;
 }
 .header-links {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -115,7 +115,6 @@ h1 {
   padding-bottom: 0.75rem;
   cursor: pointer;
   color: #ffee10;
-  box-shadow: 0 0 5px #ffee10;
   text-shadow: 0 0 5px #ffee10;
 }
 @media screen and (min-width: 768px) {
@@ -166,7 +165,6 @@ h1 {
   padding-bottom: 0.75rem;
   cursor: pointer;
   color: #ffee10;
-  box-shadow: 0 0 5px #ffee10;
   text-shadow: 0 0 5px #ffee10;
 }
 @media screen and (min-width: 768px) {
@@ -250,7 +248,7 @@ h1 {
 
 /* Body */
 .description {
-  width: 100vw;
+  width: 100%;
 }
 
 .section-header {

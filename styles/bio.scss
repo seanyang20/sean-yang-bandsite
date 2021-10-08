@@ -13,7 +13,6 @@
 html {
     padding: 0;
     margin: 0;
-    
 }
 h1 {
     font-family: "Avenir Next Regular";
@@ -26,6 +25,7 @@ h1 {
     @include flex(row, flex-start, center);
     flex-wrap: wrap;
     background-color: $black;
+    
  
     @include tablet {
         @include flex(row, flex-start, center);
@@ -34,7 +34,7 @@ h1 {
     }
 
     &-logo {
-        width: 100vw;
+        width: 100%;
         background-color: $black;
         text-align: center;
         padding: 1rem 1rem 0rem 1rem;
@@ -57,7 +57,7 @@ h1 {
        
     }
     &-links {
-        width: 100vw;
+        width: 100%;
         @include flex (row, flex-start, center);
 
         @include tablet {
@@ -93,7 +93,6 @@ h1 {
                 padding-bottom: 0.75rem;
                 cursor: pointer;
                 color: #ffee10;
-                box-shadow: 0 0 5px #ffee10;
                 text-shadow: 0 0 5px #ffee10;
               
 
@@ -140,9 +139,7 @@ h1 {
                 padding-bottom: 0.75rem;
                 cursor: pointer;
                 color: #ffee10;
-                box-shadow: 0 0 5px #ffee10;
                 text-shadow: 0 0 5px #ffee10;
-
                 @include tablet {
                     padding-bottom: 1.25rem;
                 }
@@ -223,7 +220,7 @@ h1 {
 /* Body */
 
 .description {
-    width: 100vw;
+    width: 100%;
    
 }
 .section-header {
