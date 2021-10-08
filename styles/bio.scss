@@ -1,22 +1,7 @@
-@use './partials/partial' as *;
-
-
-*::before, *::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
- }
-* {
-      padding: 0;
-      margin: 0;
-}
-html {
-    padding: 0;
-    margin: 0;
-}
-h1 {
-    font-family: "Avenir Next Regular";
-}
+@use './partials/global' as *;
+@use './partials/mixins' as *;
+@use './partials/typography' as *;
+@use './partials/variables' as *;
 
 
 /* Header */
@@ -100,7 +85,7 @@ h1 {
                 padding-bottom: 1.25rem;
                 }
             }
-            &:active {
+            &:focus {
                 color: $white;
                 border-bottom: .25rem solid $white;
                 padding-bottom: 0.75rem;
@@ -144,7 +129,7 @@ h1 {
                     padding-bottom: 1.25rem;
                 }
             }
-            &:active {
+            &:focus {
                 color: $white;
                 border-bottom: .25rem solid $white;
                 padding-bottom: 0.75rem;

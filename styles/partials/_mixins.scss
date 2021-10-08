@@ -1,13 +1,3 @@
-$darkblack: #000000;
-$black: #323232;
-$white: #FFFFFF;
-$silver: #AFAFAF;
-$alabaster: #FAFAFA;
-$mercury: #E1E1E1;
-
-
-
-
 @mixin flex ($flex-direction, $justify-content, $align-items) {
     display: flex;
     flex-direction: $flex-direction;
@@ -28,16 +18,4 @@ $mercury: #E1E1E1;
     @media screen and (min-width: 1280px) {
         @content;
     }
-}
-@font-face {
-    font-family: "Avenir Next Regular";
-    src: url("../assets/fonts/AvenirNextLTPro-Regular.otf");
-}
-@font-face {
-    font-family: "Avenir Next Demi";
-    src: url("../assets/fonts/AvenirNextLTPro-Demi.otf");
-}
-@font-face {
-    font-family: "Avenir Next Bold";
-    src: url("../assets/fonts/AvenirNextLTPro-Bold.otf");
 }
