@@ -1,0 +1,32 @@
+*::before, *::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  font-family: "Avenir Next Regular";
+}
+
+@font-face {
+  font-family: "Avenir Next Regular";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: "Avenir Next Demi";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.otf");
+}
+@font-face {
+  font-family: "Avenir Next Bold";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.otf");
+}/*# sourceMappingURL=shows.css.map */
