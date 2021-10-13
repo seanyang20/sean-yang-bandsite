@@ -1,5 +1,5 @@
-const commentsContainer = document.getElementById("comments"); // equivalent to document.querySelector("#comments")
-console.log(commentsContainer); // verifies that the correct element is being selected off of the DOM
+const commentsContainer = document.getElementById("comments");
+console.log(commentsContainer); 
 
 const user = {
     
@@ -22,46 +22,85 @@ const user = {
     ],
   };
 
-//   function displayComment(cm) {
+    // function displayComment(i) {
+    function displayComment(cm) {
+        
+
+        let singleCommentContainer = document.createElement("section");
+        singleCommentContainer.classList.add("comments__single");
+        commentsContainer.appendChild(singleCommentContainer);
     
+    
+        let commentAvatar = document.createElement("figure");
+        commentAvatar.classList.add("comments__avatar");
+        singleCommentContainer.appendChild(commentAvatar);
+        
+    
+        let commentContent = document.createElement("div");
+        commentContent.classList.add("comments__content");
+        singleCommentContainer.appendChild(commentContent);
+        
+     
+        let commentContentTop = document.createElement("div");
+        commentContentTop.classList.add("comments__content-top");
+        commentContent.appendChild(commentContentTop);
+    
+    
+        let userName = document.createElement("p");
+        userName.classList.add("comments__name");  
+        userName.innerText = cm.name;
+        commentContentTop.appendChild(userName);
+    
+    
+        let userTimeStamp = document.createElement("div");
+        userTimeStamp.classList.add("comments__timestamp");
+        userTimeStamp.innerText = cm.timestamp;
+        commentContentTop.appendChild(userTimeStamp);
+    
+    
+        let commentText = document.createElement("p");
+        commentText.classList.add("comments__text");
+        commentText.innerText = cm.content;
+        commentContent.appendChild(commentText);
+    }
 
     for (i = 0; i < user.comments.length; i++) {
+        displayComment(user.comments[i]);
+    // let singleCommentContainer = document.createElement("section");
+    // singleCommentContainer.classList.add("comments__single");
+    // commentsContainer.appendChild(singleCommentContainer);
+
+
+    // let commentAvatar = document.createElement("figure");
+    // commentAvatar.classList.add("comments__avatar");
+    // singleCommentContainer.appendChild(commentAvatar);
     
-    let singleCommentContainer = document.createElement("section");
-    singleCommentContainer.classList.add("comments__single");
-    commentsContainer.appendChild(singleCommentContainer);
 
-
-    let commentAvatar = document.createElement("figure");
-    commentAvatar.classList.add("comments__avatar");
-    singleCommentContainer.appendChild(commentAvatar);
-    
-
-    let commentContent = document.createElement("div");
-    commentContent.classList.add("comments__content");
-    singleCommentContainer.appendChild(commentContent);
+    // let commentContent = document.createElement("div");
+    // commentContent.classList.add("comments__content");
+    // singleCommentContainer.appendChild(commentContent);
     
  
-    let commentContentTop = document.createElement("div");
-    commentContentTop.classList.add("comments__content-top");
-    commentContent.appendChild(commentContentTop);
+    // let commentContentTop = document.createElement("div");
+    // commentContentTop.classList.add("comments__content-top");
+    // commentContent.appendChild(commentContentTop);
 
 
-    let userName = document.createElement("p");
-    userName.classList.add("comments__name");  
-    userName.innerText = user.comments[i].name;
-    commentContentTop.appendChild(userName);
+    // let userName = document.createElement("p");
+    // userName.classList.add("comments__name");  
+    // userName.innerText = user.comments[i].name;
+    // commentContentTop.appendChild(userName);
 
 
-    let userTimeStamp = document.createElement("div");
-    userTimeStamp.classList.add("comments__timestamp");
-    userTimeStamp.innerText = user.comments[i].timestamp;
-    commentContentTop.appendChild(userTimeStamp);
+    // let userTimeStamp = document.createElement("div");
+    // userTimeStamp.classList.add("comments__timestamp");
+    // userTimeStamp.innerText = user.comments[i].timestamp;
+    // commentContentTop.appendChild(userTimeStamp);
 
 
-    let commentText = document.createElement("p");
-    commentText.classList.add("comments__text");
-    commentText.innerText = user.comments[i].content;
-    commentContent.appendChild(commentText);
+    // let commentText = document.createElement("p");
+    // commentText.classList.add("comments__text");
+    // commentText.innerText = user.comments[i].content;
+    // commentContent.appendChild(commentText);
     };
 // }
