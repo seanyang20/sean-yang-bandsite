@@ -22,7 +22,7 @@ const user = {
     ],
   };
 
-    // function displayComment(i) {
+   
     function displayComment(cm) {
         
 
@@ -66,41 +66,26 @@ const user = {
 
     for (i = 0; i < user.comments.length; i++) {
         displayComment(user.comments[i]);
-    // let singleCommentContainer = document.createElement("section");
-    // singleCommentContainer.classList.add("comments__single");
-    // commentsContainer.appendChild(singleCommentContainer);
-
-
-    // let commentAvatar = document.createElement("figure");
-    // commentAvatar.classList.add("comments__avatar");
-    // singleCommentContainer.appendChild(commentAvatar);
-    
-
-    // let commentContent = document.createElement("div");
-    // commentContent.classList.add("comments__content");
-    // singleCommentContainer.appendChild(commentContent);
-    
- 
-    // let commentContentTop = document.createElement("div");
-    // commentContentTop.classList.add("comments__content-top");
-    // commentContent.appendChild(commentContentTop);
-
-
-    // let userName = document.createElement("p");
-    // userName.classList.add("comments__name");  
-    // userName.innerText = user.comments[i].name;
-    // commentContentTop.appendChild(userName);
-
-
-    // let userTimeStamp = document.createElement("div");
-    // userTimeStamp.classList.add("comments__timestamp");
-    // userTimeStamp.innerText = user.comments[i].timestamp;
-    // commentContentTop.appendChild(userTimeStamp);
-
-
-    // let commentText = document.createElement("p");
-    // commentText.classList.add("comments__text");
-    // commentText.innerText = user.comments[i].content;
-    // commentContent.appendChild(commentText);
+   
     };
-// }
+
+const formEl = document.getElementById("form");
+const nameInput = document.getElementById("name");
+// const timeStampInput = document.querySelector("comments__timestamp");
+const textInput = document.getElementById("comment-box");
+console.log(formEl);
+
+formEl.addEventListener ("submit", (event) => {     
+    event.preventDefault();
+
+    const newComment = {
+        "name": nameInput.value,
+        // "timestamp": timeStampInput.value,
+        "content": textInput.value,
+      }
+    console.log(nameInput);
+
+    displayComment(newComment);
+    formEl.reset();  
+})
+
