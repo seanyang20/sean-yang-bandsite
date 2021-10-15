@@ -74,73 +74,75 @@ iframe {
             padding: 3rem 2.25rem 2.25rem 2.25rem;
         }
     }
-    
-    &__single {
-        height: 13.75rem;
-        padding: 1rem 1rem 1rem 1rem;
-        border-bottom: 1px solid $mercury;
-
-        @include tablet {
-            height: 2.5rem;
-            padding: 1rem 1rem 1rem 1rem;
-            margin: 0 1.25rem 0 1.25rem;
-            @include flex(row, space-between, center);
-
-        }
-    }
-    &__header {
-        @include text-style (.8125rem, 1.125rem);
-        font-family: "Avenir Next Regular";
-        color: $silver;
-        padding-bottom: 0.25rem;
-        
-        @include tablet {
-            @include text-style (.875rem, 1.375rem);
-            display: none;
-        }
-    }
-    &__date {
-        @include text-style (.875rem, 1.375rem);
-        font-family: "Avenir Next Demi";
-        padding-bottom: 1rem;
-        @include tablet {
-            padding-bottom: 0;
-        }
-    }
-    &__venue {
-        @include text-style (.875rem, 1.375rem);
-        font-family: "Avenir Next Regular";
-        padding-bottom: 1rem;
-        @include tablet {
-            padding-bottom: 0;
-        }
-    }
-    &__location {
-        @include text-style (.875rem, 1.375rem);
-        font-family: "Avenir Next Regular";
-        padding-bottom: 1rem;
-        @include tablet {
-            padding-bottom: 0;
-        }
-    }
-    &__button {
-        height: 2.5rem;
-        background-color: $black;
-        width: 100%;
-        border-radius: .25rem;
-        color: $white;
-        font-family: "Avenir Next Demi";
-
-        @include tablet {
-            width: 20%;
-        }
-    }
 }
-.table {
+//     &__single {
+//         height: 13.75rem;
+//         padding: 1rem 1rem 1rem 1rem;
+//         border-bottom: 1px solid $mercury;
 
+//         @include tablet {
+//             height: 2.5rem;
+//             padding: 1rem 1rem 1rem 1rem;
+//             margin: 0 1.25rem 0 1.25rem;
+//             @include flex(row, space-between, center);
+
+//         }
+//     }
+//     &__header {
+//         @include text-style (.8125rem, 1.125rem);
+//         font-family: "Avenir Next Regular";
+//         color: $silver;
+//         padding-bottom: 0.25rem;
+        
+//         @include tablet {
+//             @include text-style (.875rem, 1.375rem);
+//             display: none;
+//         }
+//     }
+//     &__date {
+//         @include text-style (.875rem, 1.375rem);
+//         font-family: "Avenir Next Demi";
+//         padding-bottom: 1rem;
+//         @include tablet {
+//             padding-bottom: 0;
+//         }
+//     }
+//     &__venue {
+//         @include text-style (.875rem, 1.375rem);
+//         font-family: "Avenir Next Regular";
+//         padding-bottom: 1rem;
+//         @include tablet {
+//             padding-bottom: 0;
+//         }
+//     }
+//     &__location {
+//         @include text-style (.875rem, 1.375rem);
+//         font-family: "Avenir Next Regular";
+//         padding-bottom: 1rem;
+//         @include tablet {
+//             padding-bottom: 0;
+//         }
+//     }
+//     &__button {
+//         height: 2.5rem;
+//         background-color: $black;
+//         width: 100%;
+//         border-radius: .25rem;
+//         color: $white;
+//         font-family: "Avenir Next Demi";
+
+//         @include tablet {
+//             width: 20%;
+//         }
+//     }
+// }
+.table {
+    padding: 0 1rem 1rem 1rem;
+    width: 100%;
+    
     @include tablet {
         display: table-cell;
-        @include flex (column, flex-start, flex-start);
+        
     }
     &__thead {
         display: none;
@@ -153,9 +155,22 @@ iframe {
    
 }
 .date {
+    @include text-style (.875rem, 1.375rem);
+        font-family: "Avenir Next Demi";
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-bottom: 0;
+        }
+        
     &:before {
         content: "DATE";
-        @include flex(column, flex-start, flex-start);
+        
+
+        @include text-style (.8125rem, 1.125rem);
+        font-family: "Avenir Next Regular";
+        color: $silver;
+        padding-bottom: 0.25rem;
 
         @include tablet {
             display: none;
@@ -164,10 +179,22 @@ iframe {
     
 }
 .venue {
-    
+    @include text-style (.875rem, 1.375rem);
+    font-family: "Avenir Next Regular";
+    padding-bottom: 1rem;
+
+    @include tablet {
+        padding-bottom: 0;
+    }
+
     &:before {
         content: "VENUE";
-        @include flex(column, flex-start, flex-start);
+        
+
+        @include text-style (.8125rem, 1.125rem);
+        font-family: "Avenir Next Regular";
+        color: $silver;
+        padding-bottom: 0.25rem;
 
         @include tablet {
             display: none;
@@ -175,25 +202,52 @@ iframe {
     }
 }
 .location {
+    @include text-style (.875rem, 1.375rem);
+    font-family: "Avenir Next Regular";
+    padding-bottom: 1rem;
+
+    @include tablet {
+        padding-bottom: 0;
+    }
+
     &:before {
         content: "LOCATION";
-        @include flex(column, flex-start, flex-start);
+       
+
+        @include text-style (.8125rem, 1.125rem);
+        font-family: "Avenir Next Regular";
+        color: $silver;
+        padding-bottom: 0.25rem;
 
         @include tablet {
             display: none;
         }
     }
 }
+.button {
+    height: 2.5rem;
+    background-color: $black;
+    width: 100%;
+    border-radius: .25rem;
+    color: $white;
+    font-family: "Avenir Next Demi";
+
+    @include tablet {
+        width: 20%;
+    }
+}
 tr {
-    @include flex(column, flex-start, flex-start);
+    
+    height: 13.75rem;
+    padding: 1rem 0 1rem 0;
+    border-bottom: 1px solid $mercury;
     
 
     @include tablet {
-        @include flex(row, flex-start, flex-start);
-
         
-        
-    }
-
-    
+        height: 2.5rem;
+        padding: 1rem 1rem 1rem 1rem;
+        margin: 0 1.25rem 0 1.25rem;
+        width: 100%;
+    }    
 }

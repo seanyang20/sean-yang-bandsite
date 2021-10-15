@@ -483,90 +483,14 @@ iframe {
     padding: 3rem 2.25rem 2.25rem 2.25rem;
   }
 }
-.shows__single {
-  height: 13.75rem;
-  padding: 1rem 1rem 1rem 1rem;
-  border-bottom: 1px solid #E1E1E1;
-}
-@media screen and (min-width: 768px) {
-  .shows__single {
-    height: 2.5rem;
-    padding: 1rem 1rem 1rem 1rem;
-    margin: 0 1.25rem 0 1.25rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-}
-.shows__header {
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
-  font-family: "Avenir Next Regular";
-  color: #AFAFAF;
-  padding-bottom: 0.25rem;
-}
-@media screen and (min-width: 768px) {
-  .shows__header {
-    font-size: 0.875rem;
-    line-height: 1.375rem;
-    display: none;
-  }
-}
-.shows__date {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-family: "Avenir Next Demi";
-  padding-bottom: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .shows__date {
-    padding-bottom: 0;
-  }
-}
-.shows__venue {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-family: "Avenir Next Regular";
-  padding-bottom: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .shows__venue {
-    padding-bottom: 0;
-  }
-}
-.shows__location {
-  font-size: 0.875rem;
-  line-height: 1.375rem;
-  font-family: "Avenir Next Regular";
-  padding-bottom: 1rem;
-}
-@media screen and (min-width: 768px) {
-  .shows__location {
-    padding-bottom: 0;
-  }
-}
-.shows__button {
-  height: 2.5rem;
-  background-color: #323232;
-  width: 100%;
-  border-radius: 0.25rem;
-  color: #FFFFFF;
-  font-family: "Avenir Next Demi";
-}
-@media screen and (min-width: 768px) {
-  .shows__button {
-    width: 20%;
-  }
-}
 
+.table {
+  padding: 0 1rem 1rem 1rem;
+  width: 100%;
+}
 @media screen and (min-width: 768px) {
   .table {
     display: table-cell;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
   }
 }
 .table__thead {
@@ -578,12 +502,24 @@ iframe {
   }
 }
 
+.date {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: "Avenir Next Demi";
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .date {
+    padding-bottom: 0;
+  }
+}
 .date:before {
   content: "DATE";
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: "Avenir Next Regular";
+  color: #AFAFAF;
+  padding-bottom: 0.25rem;
 }
 @media screen and (min-width: 768px) {
   .date:before {
@@ -591,12 +527,24 @@ iframe {
   }
 }
 
+.venue {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: "Avenir Next Regular";
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .venue {
+    padding-bottom: 0;
+  }
+}
 .venue:before {
   content: "VENUE";
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: "Avenir Next Regular";
+  color: #AFAFAF;
+  padding-bottom: 0.25rem;
 }
 @media screen and (min-width: 768px) {
   .venue:before {
@@ -604,12 +552,24 @@ iframe {
   }
 }
 
+.location {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-family: "Avenir Next Regular";
+  padding-bottom: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .location {
+    padding-bottom: 0;
+  }
+}
 .location:before {
   content: "LOCATION";
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-family: "Avenir Next Regular";
+  color: #AFAFAF;
+  padding-bottom: 0.25rem;
 }
 @media screen and (min-width: 768px) {
   .location:before {
@@ -617,17 +577,30 @@ iframe {
   }
 }
 
+.button {
+  height: 2.5rem;
+  background-color: #323232;
+  width: 100%;
+  border-radius: 0.25rem;
+  color: #FFFFFF;
+  font-family: "Avenir Next Demi";
+}
+@media screen and (min-width: 768px) {
+  .button {
+    width: 20%;
+  }
+}
+
 tr {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  height: 13.75rem;
+  padding: 1rem 0 1rem 0;
+  border-bottom: 1px solid #E1E1E1;
 }
 @media screen and (min-width: 768px) {
   tr {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    height: 2.5rem;
+    padding: 1rem 1rem 1rem 1rem;
+    margin: 0 1.25rem 0 1.25rem;
+    width: 100%;
   }
 }/*# sourceMappingURL=shows.css.map */

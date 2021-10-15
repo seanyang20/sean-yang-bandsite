@@ -18,7 +18,7 @@
 
     @include tablet {
         height: 25rem;
-        padding: 0 1.5rem 0 1.5rem;
+        padding: 0 2.25rem 0 2.25rem;
     }
     @include desktop {
         height: 39rem;
@@ -51,7 +51,7 @@
 
     @include tablet {
         @include text-style (2.25rem, 2.75rem);
-        margin: 2.25rem 1.5rem 1.5rem 1.5rem;
+        margin: 2.25rem 2.25rem 1.5rem 2.25rem;
     }
     @include desktop {
         margin: 3rem 5rem 2rem 8rem;
@@ -224,10 +224,18 @@ label[for=name] {
     padding: 0 0 0.25rem 0;
     font-family: "Avenir Next Demi";
     color: $silver;
+
+    @include tablet {
+        @include text-style (.875rem, 1.375rem);
+    }
 }
 label[for=comment] {
     @extend label, [for=name];
     padding-top: 1rem;
+
+    @include tablet {
+        @include text-style (.875rem, 1.375rem);
+    }
 }
 input {
     border-radius: .25rem;
@@ -249,6 +257,10 @@ textarea {
         font-family: "Avenir Next Regular";
         color: $darkblack;
         padding: 1rem 0 0 1rem;
+
+        @include tablet {
+            @include text-style (.875rem, 1.375rem);
+        }
     }
 }
 button {
@@ -259,22 +271,45 @@ button {
     color: $white;
     font-family: "Avenir Next Demi";
     margin: 1rem 0 0 0;
+
+    @include tablet {
+        width: 25%;
+    }
 }
 .comments {
     background-color: $white;
     padding: 0 1rem 1rem 1rem;
     
+    @include tablet {
+        padding: 0 2.25rem 2.25rem 2.25rem
+    }
+
+    @include desktop {
+        padding: 0 8rem 2.25rem 8rem;
+    }
 
     &__header {
         @include text-style (1.5rem, 2rem);
         padding: 1.5rem 0 1rem 0;
         font-family: "Avenir Next Demi";
-        width: 18rem;
+     
+
+        @include tablet {
+            @include text-style (2.25rem, 2.75rem);
+            padding: 3rem 0 2.25rem 0;
+        }
     }
 
     &__divider {
         @include flex(row, flex-start, flex-start);
         
+        @include tablet {
+            padding: 0 2.25rem 0 2.25rem;
+        }
+
+        @include desktop {
+            padding: 0 16rem 0 16rem;
+        }
     }
 
     &__default-avatar {
@@ -287,6 +322,11 @@ button {
         border-radius: 50%;
         margin: 1.5rem 1rem 0 0;
 
+        @include tablet {
+            height: 3rem;
+            min-width: 3rem;
+        }
+
     }
 
     &__avatar {
@@ -298,6 +338,11 @@ button {
         background-size: cover;
         border-radius: 50%;
         margin: 0 1rem 0 0;
+
+        @include tablet {
+            height: 3rem;
+            min-width: 3rem;
+        }
     }
 
     &__content {
@@ -307,6 +352,15 @@ button {
         &-top {
             @include flex(row, space-between, center);
             width: 100%;
+        }
+    }
+
+    &__container {
+        @include tablet {
+            padding: 0 2.25rem 0 2.25rem;
+        }
+        @include desktop {
+            padding: 0 16rem 0 16rem;
         }
     }
 
@@ -322,6 +376,10 @@ button {
     &__name {
         @include text-style (.8125rem, 1.125rem);
         font-family: "Avenir Next Demi";
+
+        @include tablet {
+            @include text-style (.875rem, 1.375rem);
+        }
         
     }
 
@@ -336,6 +394,10 @@ button {
         @include text-style (.8125rem, 1.125rem);
         padding: 0.5rem 0 0.5rem 0;
         font-family: "Avenir Next Regular";
+
+        @include tablet {
+            @include text-style (.875rem, 1.375rem);
+        }
     }
 }
 
