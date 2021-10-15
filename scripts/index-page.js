@@ -1,5 +1,7 @@
-const commentsContainer = document.getElementById("comments");
+const commentsContainer = document.querySelector(".comments__container");
 console.log(commentsContainer); 
+
+
 
 const user = {
     
@@ -83,9 +85,14 @@ formEl.addEventListener ("submit", (event) => {
         // "timestamp": timeStampInput.value,
         "content": textInput.value,
       }
-    console.log(nameInput);
-
-    displayComment(newComment);
-    formEl.reset();  
+    
+    commentsContainer.innerHTML = "";
+    user.comments.unshift(newComment);
+    user.comments.forEach(comment => {
+      displayComment(comment);
+    });
+   
+  //  displayComment(newComment);
+   
+   formEl.reset();  
 })
-

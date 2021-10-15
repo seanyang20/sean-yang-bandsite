@@ -15,72 +15,113 @@
     height: 18rem;
     padding: 0 1rem 0 1rem;
 
+    @include tablet {
+        height: 36rem;
+        padding: 0 2.25rem 0 2.25rem;
+    }
+    @include desktop {
+        height: 39rem;
+        padding: 0 5rem 0 8rem;
+    }
+
     &__title {
         @include text-style (.875rem, 1.125rem);
         font-family: "Avenir Next Regular";
         color: $white;
         padding: 1.5rem 0 1.5rem 0;
+
+        @include tablet {
+            @include text-style (1.5rem, 2rem); 
+            padding: 4rem 0  1rem 0;  
+        }
     }
     &__song-name {
         font-family: "Avenir Next Demi";
         @include text-style (1.5rem, 2rem);
         color: $white;
+
+        @include tablet {
+            @include text-style (3.75rem, 4.25rem);
+        }
     }
 }
 iframe {
     padding: 1rem 0 1rem 0;
     border-radius: .25rem;
+
+    @include tablet {
+        height: 160px;
+        width: 60%;
+        padding: 4rem 0 4rem 0;
+    }
 }
 /* Shows Section */
 
 .shows {
     height: 101rem;
 
+    @include tablet {
+        height: 38rem;
+    }
 
     &__title {
         @include text-style (1.5rem, 2rem);
         font-family: "Avenir Next Demi";
         padding: 2rem 1rem 1rem 1rem;
+
+        @include tablet {
+            @include text-style (2.25rem, 2.75rem);
+            padding: 3rem 2.25rem 2.25rem 2.25rem;
+        }
     }
+    
     &__single {
         height: 13.75rem;
         padding: 1rem 1rem 1rem 1rem;
         border-bottom: 1px solid $mercury;
+
+        @include tablet {
+            height: 2.5rem;
+            padding: 1rem 1rem 1rem 1rem;
+            margin: 0 1.25rem 0 1.25rem;
+            @include flex(row, space-between, center);
+
+        }
     }
-    &__date-header {
+    &__header {
         @include text-style (.8125rem, 1.125rem);
         font-family: "Avenir Next Regular";
         color: $silver;
         padding-bottom: 0.25rem;
+        
+        @include tablet {
+            @include text-style (.875rem, 1.375rem);
+            display: none;
+        }
     }
     &__date {
         @include text-style (.875rem, 1.375rem);
         font-family: "Avenir Next Demi";
         padding-bottom: 1rem;
-
-    }
-    &__venue-header {
-        @include text-style (.8125rem, 1.125rem);
-        font-family: "Avenir Next Regular";
-        color: $silver;
-        padding-bottom: 0.25rem;
+        @include tablet {
+            padding-bottom: 0;
+        }
     }
     &__venue {
         @include text-style (.875rem, 1.375rem);
         font-family: "Avenir Next Regular";
         padding-bottom: 1rem;
-    }
-    &__location-header {
-        @include text-style (.8125rem, 1.125rem);
-        font-family: "Avenir Next Regular";
-        color: $silver;
-        padding-bottom: 0.25rem;
+        @include tablet {
+            padding-bottom: 0;
+        }
     }
     &__location {
         @include text-style (.875rem, 1.375rem);
         font-family: "Avenir Next Regular";
         padding-bottom: 1rem;
-
+        @include tablet {
+            padding-bottom: 0;
+        }
     }
     &__button {
         height: 2.5rem;
@@ -89,6 +130,70 @@ iframe {
         border-radius: .25rem;
         color: $white;
         font-family: "Avenir Next Demi";
+
+        @include tablet {
+            width: 20%;
+        }
+    }
+}
+.table {
+
+    @include tablet {
+        display: table-cell;
+        @include flex (column, flex-start, flex-start);
+    }
+    &__thead {
+        display: none;
+
+        @include tablet {
+            display: table-cell;
+         
+        }
+    }
+   
+}
+.date {
+    &:before {
+        content: "DATE";
+        @include flex(column, flex-start, flex-start);
+
+        @include tablet {
+            display: none;
+        }
+    }
+    
+}
+.venue {
+    
+    &:before {
+        content: "VENUE";
+        @include flex(column, flex-start, flex-start);
+
+        @include tablet {
+            display: none;
+        }
+    }
+}
+.location {
+    &:before {
+        content: "LOCATION";
+        @include flex(column, flex-start, flex-start);
+
+        @include tablet {
+            display: none;
+        }
+    }
+}
+tr {
+    @include flex(column, flex-start, flex-start);
+    
+
+    @include tablet {
+        @include flex(row, flex-start, flex-start);
+
+        
         
     }
+
+    
 }
