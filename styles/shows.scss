@@ -59,6 +59,7 @@ iframe {
 
 .shows {
     height: 101rem;
+    
 
     @include tablet {
         height: 38rem;
@@ -140,16 +141,38 @@ iframe {
     padding: 0 1rem 1rem 1rem;
     width: 100%;
     
+    
     @include tablet {
         display: table-cell;
+        padding: 0 1.25rem 1rem 1.25rem;
+        width: 96.5vw;
         
     }
     &__thead {
         display: none;
 
         @include tablet {
-            display: table-cell;
-         
+            display: flex;
+            // justify-content: space-between;
+            padding: 0 0 0 1rem;
+            @include text-style (.8125rem, 1.125rem);
+            font-family: "Avenir Next Regular";
+            color: $silver;
+            text-transform: uppercase;
+            width: 100%;
+            
+
+        }
+    }
+    &__header {
+        @include tablet {
+            // width: 33.3%;
+            &:nth-child(2) {
+               padding: 0 5rem 0 5rem;
+            }
+            &:nth-child(3) {
+                padding: 0 5rem 0 0;
+            }
         }
     }
    
@@ -158,9 +181,11 @@ iframe {
     @include text-style (.875rem, 1.375rem);
         font-family: "Avenir Next Demi";
         padding-bottom: 1rem;
+        @include flex(column, flex-start, flex-start);
 
         @include tablet {
             padding-bottom: 0;
+            flex-basis: 7.563125rem;
         }
         
     &:before {
@@ -182,9 +207,11 @@ iframe {
     @include text-style (.875rem, 1.375rem);
     font-family: "Avenir Next Regular";
     padding-bottom: 1rem;
+    @include flex(column, flex-start, flex-start);
 
     @include tablet {
         padding-bottom: 0;
+        flex-basis: 6.26375rem;
     }
 
     &:before {
@@ -205,6 +232,7 @@ iframe {
     @include text-style (.875rem, 1.375rem);
     font-family: "Avenir Next Regular";
     padding-bottom: 1rem;
+    @include flex(column, flex-start, flex-start);
 
     @include tablet {
         padding-bottom: 0;
@@ -237,17 +265,30 @@ iframe {
     }
 }
 tr {
-    
+    @include flex(column, flex-start, flex-start);
     height: 13.75rem;
     padding: 1rem 0 1rem 0;
     border-bottom: 1px solid $mercury;
-    
 
     @include tablet {
-        
+        @include flex(row, flex-start, flex-start);
+        padding: 1rem 0 1rem 0;
+        justify-content: space-between;
+        width: 100%;
+
+    }
+    
+    &:hover, td:hover {
+        background-color: $alabaster;
+    }
+
+    @include tablet {
         height: 2.5rem;
         padding: 1rem 1rem 1rem 1rem;
-        margin: 0 1.25rem 0 1.25rem;
+        margin: 0 1.25rem 0 0;
         width: 100%;
     }    
+}
+.selected {
+    background-color: $mercury !important;
 }

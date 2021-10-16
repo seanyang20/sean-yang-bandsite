@@ -73,16 +73,22 @@ const user = {
 
 const formEl = document.getElementById("form");
 const nameInput = document.getElementById("name");
-// const timeStampInput = document.querySelector("comments__timestamp");
 const textInput = document.getElementById("comment-box");
 console.log(formEl);
 
 formEl.addEventListener ("submit", (event) => {     
     event.preventDefault();
 
+    var curr = new Date(),
+    curr_year = curr.getFullYear(),
+    curr_month = curr.getMonth()+1,
+    curr_day = curr.getDay()+10,
+    today = curr_month+'/'+curr_day+'/'+curr_year;
+    console.log(today);
+
     const newComment = {
         "name": nameInput.value,
-        // "timestamp": timeStampInput.value,
+        "timestamp": today,
         "content": textInput.value,
       }
     
@@ -91,8 +97,20 @@ formEl.addEventListener ("submit", (event) => {
     user.comments.forEach(comment => {
       displayComment(comment);
     });
-   
-  //  displayComment(newComment);
+  
    
    formEl.reset();  
 })
+function validateForm() {
+  let x = document.forms["form"]["name"].value;
+  
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  let y = document.forms["form"]["comment-box"].value;
+  if (y == "") {
+    alert("Comment box must be filled out");
+    return false;
+  }
+}

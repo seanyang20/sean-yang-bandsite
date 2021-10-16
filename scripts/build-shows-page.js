@@ -73,11 +73,13 @@ tableBody.appendChild(thead);
 let data = Object.keys(shows[0]);
 for (let key of data) {
     // Adding th tag to thead element
+    if (key != "button"){
     const tableRow = document.createElement('th');
     tableRow.classList.add('table__header');
     thead.appendChild(tableRow);
     let text = document.createTextNode(key);
     tableRow.appendChild(text);
+    }
 }
 /* Creating the Thead in Table */
 // function generateTableHead (table) {
@@ -126,6 +128,17 @@ const displayShowsTable = (obj) => {
   for (let i = 0; i < shows.length; i++) {
     displayShowsTable(shows[i]);
   }
+
+const tableRows = document.querySelectorAll("tr");
+
+for (let i = 0; i < tableRows.length; i++) {
+  tableRows[i].addEventListener("click", (event) => {
+    for (let j = 0; j < tableRows[i].cells.length; j++) {
+      tableRows[i].cells[j].classList.toggle("selected");
+    }
+  })
+}
+
 
 //     function displayShows(sw) {
         
