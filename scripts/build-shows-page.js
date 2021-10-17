@@ -101,6 +101,7 @@ for (let key of data) {
 
 const displayShowsTable = (obj) => {
     const tableRow = document.createElement("tr");
+    
 
     const tableCellDate = document.createElement("td");
     tableCellDate.classList.add('date')
@@ -133,9 +134,9 @@ const tableRows = document.querySelectorAll("tr");
 
 for (let i = 0; i < tableRows.length; i++) {
   tableRows[i].addEventListener("click", (event) => {
-    for (let j = 0; j < tableRows[i].cells.length; j++) {
-      tableRows[i].cells[j].classList.toggle("selected");
-    }
+    // for (let j = 0; j < tableRows[i].cells.length; j++) {
+      tableRows[i].classList.toggle("selected");
+    // }
   })
 }
 

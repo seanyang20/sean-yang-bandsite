@@ -22,8 +22,16 @@
     @include desktop {
         height: 39rem;
         padding: 0 5rem 0 8rem;
+        @include flex (row, flex-start, center);
     }
+    &__text {
 
+        @include desktop {
+            width: 55%;
+            @include flex (column, flex-start, flex-start);
+        }  
+    }
+   
     &__title {
         @include text-style (.875rem, 1.125rem);
         font-family: "Avenir Next Regular";
@@ -34,6 +42,10 @@
             @include text-style (1.5rem, 2rem); 
             padding: 4rem 0  1rem 0;  
         }
+
+        @include desktop {
+            padding: 0 0 2rem 0;
+        }
     }
     &__song-name {
         font-family: "Avenir Next Demi";
@@ -43,18 +55,30 @@
         @include tablet {
             @include text-style (3.75rem, 4.25rem);
         }
+        @include desktop {
+            padding: 0 0 3rem 0;
+        }
     }
 }
 iframe {
     padding: 1rem 0 1rem 0;
     border-radius: .25rem;
 
+
     @include tablet {
-        height: 160px;
+        height: 10rem;
         width: 60%;
         padding: 4rem 0 4rem 0;
     }
+    @include desktop {
+        height: 9rem;
+        width: 40%;
+    }
 }
+.iframe-bottom {
+    display: none;
+}
+
 /* Shows Section */
 
 .shows {
@@ -65,6 +89,9 @@ iframe {
         height: 38rem;
     }
 
+    @include desktop {
+        @include flex (row, flex-start, flex-start);
+    }
     &__title {
         @include text-style (1.5rem, 2rem);
         font-family: "Avenir Next Demi";
@@ -73,6 +100,9 @@ iframe {
         @include tablet {
             @include text-style (2.25rem, 2.75rem);
             padding: 3rem 2.25rem 2.25rem 2.25rem;
+        }
+        @include desktop {
+            padding: 3rem 8rem 2.25rem 8rem;
         }
     }
 }
@@ -148,6 +178,10 @@ iframe {
         width: 96.5vw;
         
     }
+    @include desktop {
+        padding: 4.25rem 1.25rem 1rem 1.25rem;
+        width: 61.5vw;
+    }
     &__thead {
         display: none;
 
@@ -159,19 +193,24 @@ iframe {
             font-family: "Avenir Next Regular";
             color: $silver;
             text-transform: uppercase;
-            width: 100%;
-            
-
+            width: 79%;
+        }
+        @include desktop {
+            padding: 0 0 2.5rem 1rem;
         }
     }
     &__header {
         @include tablet {
             // width: 33.3%;
+            text-align: left;
+            flex-basis: 35.5%;
             &:nth-child(2) {
-               padding: 0 5rem 0 5rem;
+            //    padding: 0 5rem 0 5rem;
+            flex-basis: 31.5%;
             }
             &:nth-child(3) {
-                padding: 0 5rem 0 0;
+                // padding: 0 5rem 0 0;
+            flex-basis: 32.5%;
             }
         }
     }
@@ -281,6 +320,7 @@ tr {
     &:hover, td:hover {
         background-color: $alabaster;
     }
+ 
 
     @include tablet {
         height: 2.5rem;

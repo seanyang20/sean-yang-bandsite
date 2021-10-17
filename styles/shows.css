@@ -420,6 +420,19 @@ h1 {
   .hero {
     height: 39rem;
     padding: 0 5rem 0 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__text {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 .hero__title {
@@ -436,6 +449,11 @@ h1 {
     padding: 4rem 0 1rem 0;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero__title {
+    padding: 0 0 2rem 0;
+  }
+}
 .hero__song-name {
   font-family: "Avenir Next Demi";
   font-size: 1.5rem;
@@ -448,6 +466,11 @@ h1 {
     line-height: 4.25rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .hero__song-name {
+    padding: 0 0 3rem 0;
+  }
+}
 
 iframe {
   padding: 1rem 0 1rem 0;
@@ -455,10 +478,20 @@ iframe {
 }
 @media screen and (min-width: 768px) {
   iframe {
-    height: 160px;
+    height: 10rem;
     width: 60%;
     padding: 4rem 0 4rem 0;
   }
+}
+@media screen and (min-width: 1280px) {
+  iframe {
+    height: 9rem;
+    width: 40%;
+  }
+}
+
+.iframe-bottom {
+  display: none;
 }
 
 /* Shows Section */
@@ -468,6 +501,14 @@ iframe {
 @media screen and (min-width: 768px) {
   .shows {
     height: 38rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 .shows__title {
@@ -483,6 +524,11 @@ iframe {
     padding: 3rem 2.25rem 2.25rem 2.25rem;
   }
 }
+@media screen and (min-width: 1280px) {
+  .shows__title {
+    padding: 3rem 8rem 2.25rem 8rem;
+  }
+}
 
 .table {
   padding: 0 1rem 1rem 1rem;
@@ -493,6 +539,12 @@ iframe {
     display: table-cell;
     padding: 0 1.25rem 1rem 1.25rem;
     width: 96.5vw;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .table {
+    padding: 4.25rem 1.25rem 1rem 1.25rem;
+    width: 61.5vw;
   }
 }
 .table__thead {
@@ -507,15 +559,24 @@ iframe {
     font-family: "Avenir Next Regular";
     color: #AFAFAF;
     text-transform: uppercase;
-    width: 100%;
+    width: 79%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .table__thead {
+    padding: 0 0 2.5rem 1rem;
   }
 }
 @media screen and (min-width: 768px) {
+  .table__header {
+    text-align: left;
+    flex-basis: 35.5%;
+  }
   .table__header:nth-child(2) {
-    padding: 0 5rem 0 5rem;
+    flex-basis: 31.5%;
   }
   .table__header:nth-child(3) {
-    padding: 0 5rem 0 0;
+    flex-basis: 32.5%;
   }
 }
 
