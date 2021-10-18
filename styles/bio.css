@@ -896,4 +896,8 @@ button {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
+}
+
+.selected {
+  border: 1px solid #D22D2D;
 }/*# sourceMappingURL=bio.css.map */

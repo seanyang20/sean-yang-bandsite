@@ -76,39 +76,51 @@ const nameInput = document.getElementById("name");
 const textInput = document.getElementById("comment-box");
 console.log(formEl);
 
+function submitTime () {
+  const currentDate = new Date ();
+  return `${currentDate.getMonth() + 1}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
+}
+
+const newComment = {
+  "name": nameInput.value,
+  "timestamp": submitTime(),
+  "content": textInput.value,
+}
+function addingComment () {
+  commentsContainer.innerHTML = "";
+  user.comments.unshift(newComment);
+  user.comments.forEach(comment => {
+    displayComment(comment);
+  });
+}
 formEl.addEventListener ("submit", (event) => {     
     event.preventDefault();
 
-    var curr = new Date(),
-    curr_year = curr.getFullYear(),
-    curr_month = curr.getMonth()+1,
-    curr_day = curr.getDay()+10,
-    today = curr_month+'/'+curr_day+'/'+curr_year;
-    console.log(today);
-
     const newComment = {
         "name": nameInput.value,
-        "timestamp": today,
+        "timestamp": submitTime(),
         "content": textInput.value,
       }
     
+    validateForm();
     commentsContainer.innerHTML = "";
     user.comments.unshift(newComment);
     user.comments.forEach(comment => {
       displayComment(comment);
     });
   
-   
    formEl.reset();  
 })
+
+
 function validateForm() {
   let x = document.forms["form"]["name"].value;
-  
+  let y = document.forms["form"]["comment-box"].value;
   if (x == "") {
     alert("Name must be filled out");
     return false;
   }
-  let y = document.forms["form"]["comment-box"].value;
+ 
   if (y == "") {
     alert("Comment box must be filled out");
     return false;
