@@ -249,10 +249,17 @@ input {
         color: $darkblack;
         padding: 0 0 0 1rem;
     }
+
+    &:invalid {
+        border: 1px solid #D22D2D;
+    }
 }
 textarea {
     @extend input;
     height: 6.75rem;
+    &:invalid {
+        border: 1px solid #D22D2D;
+    }
     &::placeholder {
         font-family: "Avenir Next Regular";
         color: $darkblack;

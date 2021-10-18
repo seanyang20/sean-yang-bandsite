@@ -707,9 +707,15 @@ input[type=text]::placeholder, textarea[type=text]::placeholder {
   color: #000000;
   padding: 0 0 0 1rem;
 }
+input:invalid, textarea:invalid {
+  border: 1px solid #D22D2D;
+}
 
 textarea {
   height: 6.75rem;
+}
+textarea:invalid {
+  border: 1px solid #D22D2D;
 }
 textarea::-moz-placeholder {
   font-family: "Avenir Next Regular";

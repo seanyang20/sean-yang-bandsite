@@ -74,6 +74,7 @@ const user = {
 const formEl = document.getElementById("form");
 const nameInput = document.getElementById("name");
 const textInput = document.getElementById("comment-box");
+const submitButton = document.getElementById("addComment");
 console.log(formEl);
 
 function submitTime () {
@@ -96,18 +97,30 @@ function addingComment () {
 formEl.addEventListener ("submit", (event) => {     
     event.preventDefault();
 
-    const newComment = {
-        "name": nameInput.value,
-        "timestamp": submitTime(),
-        "content": textInput.value,
-      }
     
-    validateForm();
-    commentsContainer.innerHTML = "";
-    user.comments.unshift(newComment);
-    user.comments.forEach(comment => {
-      displayComment(comment);
-    });
+
+    isValidName = nameInput.checkValidity();
+    isValidContent = textInput.checkValidity();
+  
+  if ( isValidName ) {
+    submitButton.disabled = false;
+    addingComment();
+  } else {
+    submitButton.disabled = true;
+    
+  }
+    // const newComment = {
+    //     "name": nameInput.value,
+    //     "timestamp": submitTime(),
+    //     "content": textInput.value,
+    //   }
+    
+    // validateForm();
+    // commentsContainer.innerHTML = "";
+    // user.comments.unshift(newComment);
+    // user.comments.forEach(comment => {
+    //   displayComment(comment);
+    // });
   
    formEl.reset();  
 })
