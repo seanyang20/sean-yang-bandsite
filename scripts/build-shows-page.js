@@ -1,3 +1,22 @@
+const apiKey = "4beb74cb-bea4-450b-be89-9eeb389e2102"
+const apiURL = `https://project-1-api.herokuapp.com/showdates?api_key=${apiKey}`;
+// const axios = require("axios");
+
+axios
+  .get(apiURL)
+  .then((result) => {
+    console.log(result.data);
+    for (let i = 0; i < shows.length; i++) {
+      displayShowsTable(result.data[i]);
+    
+    }  
+  })
+  .catch((error) => {
+    console.log(error);
+  })
+
+
+
 // Shows Container
 const showsContainer = document.getElementById("shows");
 console.log(showsContainer); 
@@ -19,50 +38,44 @@ let shows = [
     // dateHeader: "DATE",
     date: "Mon Sept 06 2021",
     // venueHeader: "VENUE",
-    venue: "Ronald Lane",
+    place: "Ronald Lane",
     //locationHeader: "LOCATION",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS", },
+    location: "San Francisco, CA", },
     {
     //dateHeader: "DATE",
     date: "Tue Sept 21 2021", 
     //venueHeader: "VENUE",
-    venue: "Pier 3 East",
+    place: "Pier 3 East",
     //locationHeader: "LOCATION",
-    location: "San Francisco, CA", 
-    button: "BUY TICKETS",},
+    location: "San Francisco, CA", },
     {
     //dateHeader: "DATE",
     date: "Fri Oct 15 2021", 
    // venueHeader: "VENUE",
-    venue: "View Lounge",
+    place: "View Lounge",
  //   locationHeader: "LOCATION",
-    location: "San Francisco, CA",
-    button: "BUY TICKETS", },
+    location: "San Francisco, CA",},
     {
  //   dateHeader: "DATE",
     date: "Sat Nov 06 2021", 
  //   venueHeader: "VENUE",
-    venue: "Hyatt Agency",
+    place: "Hyatt Agency",
  //   locationHeader: "LOCATION",
-    location: "San Francisco, CA", 
-    button: "BUY TICKETS",},
+    location: "San Francisco, CA", },
     {
  //   dateHeader: "DATE",
     date: "Fri Nov 26 2021", 
   //  venueHeader: "VENUE",
-    venue: "Moscow Center",
+    place: "Moscow Center",
   //  locationHeader: "LOCATION",
-    location: "San Francisco, CA", 
-    button: "BUY TICKETS",},
+    location: "San Francisco, CA", },
     {
   //  dateHeader: "DATE",
     date: "Wed Dec 15 2021", 
   //  venueHeader: "VENUE",
-    venue: "Press Club",
+    place: "Press Club",
    // locationHeader: "LOCATION",
-    location: "San Francisco, CA", 
-    button: "BUY TICKETS",},
+    location: "San Francisco, CA", },
 ]
 // Creating Thead Element 
 const thead = document.createElement('thead');
@@ -102,7 +115,6 @@ for (let key of data) {
 const displayShowsTable = (obj) => {
     const tableRow = document.createElement("tr");
     
-
     const tableCellDate = document.createElement("td");
     tableCellDate.classList.add('date')
     tableCellDate.innerText = obj.date;
@@ -110,7 +122,7 @@ const displayShowsTable = (obj) => {
   
     const tableCellVenue = document.createElement("td");
     tableCellVenue.classList.add('venue');
-    tableCellVenue.innerText = obj.venue;
+    tableCellVenue.innerText = obj.place;
     tableRow.appendChild(tableCellVenue);
 
     const tableCellLocation = document.createElement("td");
@@ -120,15 +132,16 @@ const displayShowsTable = (obj) => {
 
     const tableCellButton = document.createElement("button");
     tableCellButton.classList.add('button');
-    tableCellButton.innerText = obj.button;
+    tableCellButton.innerText = "BUY TICKETS";
     tableRow.appendChild(tableCellButton);
   
     tableBody.appendChild(tableRow);
   }
   
+
   for (let i = 0; i < shows.length; i++) {
     displayShowsTable(shows[i]);
-  }
+  }  
 
 const tableRows = document.querySelectorAll("tr");
 

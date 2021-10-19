@@ -113,13 +113,12 @@ function addingComment () {
 formEl.addEventListener ("submit", (event) => {     
     event.preventDefault();
 
-    // const newComment = {
-    //   "name": nameInput.value,
-    //   "timestamp": submitTime(),
-    //   "content": textInput.value,
-    // }
-    console.log(newComment);
-  
+    const newComment = {
+      "name": nameInput.value,
+      "timestamp": submitTime(),
+      "content": textInput.value,
+    }
+   
     if (nameInput.value == "") {
       errorResponse(nameInput, true);
       alert("Please fill in a valid name");
