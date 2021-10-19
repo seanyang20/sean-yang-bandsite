@@ -1,30 +1,98 @@
-const apiKey = "4beb74cb-bea4-450b-be89-9eeb389e2102"
-const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`;
+// const apiKey = "4beb74cb-bea4-450b-be89-9eeb389e2102"
+const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`;
+// Content-Type; application/json
 // const axios = require("axios");
 
-axios
-  .get(apiURL)
-  .then((result) => {
-    
-    for (i = 0; i < comments.length; i++) {
-      displayComment(result.data[i]);
+
+// axios
+//   .post(apiURL, {
+//         "name": nameInput.value,
+//         "timestamp": submitTime(),
+//         "comment": textInput.value
+//       }
+
+//     // formEl.addEventListener ("submit", (event) => {     
+//     //   event.preventDefault();
+  
+//     //   const newComment = {
+//     //     "name": nameInput.value,
+//     //     "timestamp": submitTime(),
+//     //     "content": textInput.value,
+//     //   }
      
-    };
- 
-  })
-  .catch((error) => {
-    console.log(error);
-  }
-  )
+//       // if (nameInput.value == "") {
+//       //   errorResponse(nameInput, true);
+//       //   alert("Please fill in a valid name");
+//       //   // errorResponse(textInput, false);
+//       //   if (textInput.value == "") {
+//       //     errorResponse(textInput, true);
+//       //     alert("Please enter your comment");
+//       //   }
+//       // } else if (textInput.value == "") {
+//       //   errorResponse(textInput, true);
+//       //   // errorResponse(nameInput, false);
+//       //   alert("Please enter your comment");
+//       // } else {
+//       //   errorResponse(nameInput, false);
+//       //   errorResponse(textInput, false);
+//       //   commentsContainer.innerHTML = "";
+//       //   comments.unshift(newComment);
+//       //   console.log(newComment);
+//       //   comments.forEach(comment => {
+//       //   // displayAddedComment(comment);
+//       // })  
+//       // }
+
+//   //     formEl.reset();  
+//   // })
 
 
+    
+//   // }
+  // )
+  // .then((result) => {
+  //   console.log(result);
+//   //   formEl.addEventListener ("submit", (event) => {     
+//   //     event.preventDefault();
+  
+//   //     const newComment = {
+//   //       "name": nameInput.value,
+//   //       "timestamp": submitTime(),
+//   //       "content": textInput.value,
+//   //     }
+     
+//   //     if (nameInput.value == "") {
+//   //       errorResponse(nameInput, true);
+//   //       alert("Please fill in a valid name");
+//   //       // errorResponse(textInput, false);
+//   //       if (textInput.value == "") {
+//   //         errorResponse(textInput, true);
+//   //         alert("Please enter your comment");
+//   //       }
+//   //     } else if (textInput.value == "") {
+//   //       errorResponse(textInput, true);
+//   //       // errorResponse(nameInput, false);
+//   //       alert("Please enter your comment");
+//   //     } else {
+//   //       errorResponse(nameInput, false);
+//   //       errorResponse(textInput, false);
+//   //       commentsContainer.innerHTML = "";
+//   //       comments.unshift(newComment);
+//   //       console.log(newComment);
+//   //       comments.forEach(comment => {
+//   //       // displayAddedComment(comment);
+//   //     })  
+//   //     }
+
+//   //     formEl.reset();  
+//   // })
+// })
+  // .catch((error) => {
+  //   console.log(error);
+  // })
 
 const commentsContainer = document.querySelector(".comments__container");
 console.log(commentsContainer); 
-
-
-
-
     
     comments = [
       {
@@ -92,6 +160,47 @@ console.log(commentsContainer);
         commentContent.appendChild(commentText);
     }
 
+  //   function displayAddedComment(cm) {
+        
+
+  //     let singleCommentContainer = document.createElement("section");
+  //     singleCommentContainer.classList.add("comments__single");
+  //     commentsContainer.appendChild(singleCommentContainer);
+  
+  
+  //     let commentAvatar = document.createElement("figure");
+  //     commentAvatar.classList.add("comments__avatar");
+  //     singleCommentContainer.appendChild(commentAvatar);
+      
+  
+  //     let commentContent = document.createElement("div");
+  //     commentContent.classList.add("comments__content");
+  //     singleCommentContainer.appendChild(commentContent);
+      
+   
+  //     let commentContentTop = document.createElement("div");
+  //     commentContentTop.classList.add("comments__content-top");
+  //     commentContent.appendChild(commentContentTop);
+  
+  
+  //     let userName = document.createElement("p");
+  //     userName.classList.add("comments__name");  
+  //     userName.innerText = cm.name;
+  //     commentContentTop.appendChild(userName);
+  
+  
+  //     let userTimeStamp = document.createElement("div");
+  //     userTimeStamp.classList.add("comments__timestamp");
+  //     userTimeStamp.innerText = cm.timestamp;
+  //     commentContentTop.appendChild(userTimeStamp);
+  
+  
+  //     let commentText = document.createElement("p");
+  //     commentText.classList.add("comments__text");
+  //     commentText.innerText = cm.comment;
+  //     commentContent.appendChild(commentText);
+  // }
+
     /* Commented out hard-coded table rows to give room for api extraction */
 
     // for (i = 0; i < comments.length; i++) {
@@ -115,21 +224,39 @@ const newComment = {
   "timestamp": submitTime(),
   "content": textInput.value,
 }
-function addingComment () {
-  commentsContainer.innerHTML = "";
-  comments.unshift(newComment);
-  comments.forEach(comment => {
-    displayComment(comment);
-  });
-}
-formEl.addEventListener ("submit", (event) => {     
+// function addingComment () {
+//   commentsContainer.innerHTML = "";
+//   comments.unshift(newComment);
+//   comments.forEach(comment => {
+//     displayComment(comment);
+//   });
+// }
+const callingAxios = async () => {
+  await axios
+    .get(apiURL)
+    .then((result) => {
+     
+      for (i = 0; i < result.data.length; i++) {
+        displayComment(result.data[i]);
+        console.log(result.data[i]);
+      };
+   
+    })
+    .catch((error) => {
+      console.log(error);
+    }
+    )
+  }
+  callingAxios();
+
+formEl.addEventListener ("submit", async (event) => {     
     event.preventDefault();
 
-    const newComment = {
-      "name": nameInput.value,
-      "timestamp": submitTime(),
-      "content": textInput.value,
-    }
+    // const newComment = {
+    //   "name": nameInput.value,
+    //   "timestamp": submitTime(),
+    //   "comment": textInput.value,
+    // }
    
     if (nameInput.value == "") {
       errorResponse(nameInput, true);
@@ -147,11 +274,29 @@ formEl.addEventListener ("submit", (event) => {
       errorResponse(nameInput, false);
       errorResponse(textInput, false);
       commentsContainer.innerHTML = "";
-      comments.unshift(newComment);
-      console.log(newComment);
-      comments.forEach(comment => {
-      displayComment(comment);
-    })  
+      console.log(nameInput.value);
+      await axios
+      .post(apiURL, {
+        "name": nameInput.value,
+        // "timestamp": submitTime(),
+        "comment": textInput.value
+      })
+      .then(result => {
+        // displayAddedComment(result.data);
+        console.log(result);
+        callingAxios();
+      })
+      .catch(error => {
+        console.log(error);
+      })
+      // callingAxios();
+      // comments.unshift(newComment);
+      // console.log(newComment);
+      // comments.forEach(comment => {
+      // displayAddedComment(comment);
+      // }
+      // )
+      
     }
     
   //   isValidName = nameInput.checkValidity();
@@ -184,6 +329,7 @@ function errorResponse (field, error) {
     field.style.borderColor = "#D22D2D";
   } 
  }
+ 
 
 // function validateForm() {
 //   let x = document.forms["form"]["name"].value;
