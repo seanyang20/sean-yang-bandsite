@@ -118,6 +118,20 @@ const displayShowsTable = (obj) => {
     const tableCellDate = document.createElement("td");
     tableCellDate.classList.add('date')
     tableCellDate.innerText = obj.date;
+    let timeStamp = tableCellDate.innerText;
+    let date = new Date(timeStamp * 1.00001);
+    // date.toLocaleString();
+    let dateString = date.toString().substring(0, 15);
+    tableCellDate.innerText = dateString;
+    
+    // let curr_date = date.getDate();
+    // let curr_month = date.getMonth() + 1; //Months are zero based
+    // let curr_year = date.getFullYear();
+    // console.log(curr_date + "-" + curr_month + "-" + curr_year);
+  
+    // console.log(date.getTime());
+    // console.log(date);
+    // console.log(date.getTime());
     tableRow.appendChild(tableCellDate);
   
     const tableCellVenue = document.createElement("td");
@@ -139,9 +153,11 @@ const displayShowsTable = (obj) => {
   }
   
 
-  for (let i = 0; i < shows.length; i++) {
-    displayShowsTable(shows[i]);
-  }  
+  /* Commented out hard-coded table rows to give room for api extraction */
+
+  // for (let i = 0; i < shows.length; i++) {
+  //   displayShowsTable(shows[i]);
+  // }  
 
 const tableRows = document.querySelectorAll("tr");
 
