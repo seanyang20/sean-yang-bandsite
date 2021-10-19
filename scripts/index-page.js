@@ -1,3 +1,19 @@
+const apiKey = "4beb74cb-bea4-450b-be89-9eeb389e2102"
+const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`;
+// const axios = require("axios");
+
+axios
+  .get(apiURL)
+  .then((result) => {
+    console.log(displayComment(result.data));
+  })
+  .catch((error) => {
+    console.log(error);
+  }
+  )
+
+
+
 const commentsContainer = document.querySelector(".comments__container");
 console.log(commentsContainer); 
 
@@ -68,7 +84,7 @@ const user = {
 
     for (i = 0; i < user.comments.length; i++) {
         displayComment(user.comments[i]);
-   
+      
     };
 
 const formEl = document.getElementById("form");
@@ -97,18 +113,46 @@ function addingComment () {
 formEl.addEventListener ("submit", (event) => {     
     event.preventDefault();
 
-    
-
-    isValidName = nameInput.checkValidity();
-    isValidContent = textInput.checkValidity();
+    // const newComment = {
+    //   "name": nameInput.value,
+    //   "timestamp": submitTime(),
+    //   "content": textInput.value,
+    // }
+    console.log(newComment);
   
-  if ( isValidName ) {
-    submitButton.disabled = false;
-    addingComment();
-  } else {
-    submitButton.disabled = true;
+    if (nameInput.value == "") {
+      errorResponse(nameInput, true);
+      alert("Please fill in a valid name");
+      // errorResponse(textInput, false);
+      if (textInput.value == "") {
+        errorResponse(textInput, true);
+        alert("Please enter your comment");
+      }
+    } else if (textInput.value == "") {
+      errorResponse(textInput, true);
+      // errorResponse(nameInput, false);
+      alert("Please enter your comment");
+    } else {
+      errorResponse(nameInput, false);
+      errorResponse(textInput, false);
+      commentsContainer.innerHTML = "";
+      user.comments.unshift(newComment);
+      console.log(newComment);
+      user.comments.forEach(comment => {
+      displayComment(comment);
+    })  
+    }
     
-  }
+  //   isValidName = nameInput.checkValidity();
+  //   isValidContent = textInput.checkValidity();
+  
+  // if ( isValidName ) {
+  //   submitButton.disabled = false;
+  //   addingComment();
+  // } else {
+  //   submitButton.disabled = true;
+    
+  // }
     // const newComment = {
     //     "name": nameInput.value,
     //     "timestamp": submitTime(),
@@ -124,18 +168,42 @@ formEl.addEventListener ("submit", (event) => {
   
    formEl.reset();  
 })
+function errorResponse (field, error) {
+  if (error) {
+    field.style.borderColor = "#D22D2D";
+  } 
+ }
 
-
-function validateForm() {
-  let x = document.forms["form"]["name"].value;
-  let y = document.forms["form"]["comment-box"].value;
-  if (x == "") {
-    alert("Name must be filled out");
-    return false;
-  }
+// function validateForm() {
+//   let x = document.forms["form"]["name"].value;
+//   let y = document.forms["form"]["comment-box"].value;
+//   if (x == "") {
+//     alert("Name must be filled out");
+//     return false;
+//   }
  
-  if (y == "") {
-    alert("Comment box must be filled out");
-    return false;
-  }
-}
+//   if (y == "") {
+//     alert("Comment box must be filled out");
+//     return false;
+//   }
+// }
+
+
+
+// if (event.name.value == "") {
+//   errorResponse(event.target.name, true);
+//   alert("Please fill in a valid name");
+//   errorResponse(event.target.comment, false);
+//   if (event.target.comment.value == "") {
+//     errorResponse(event.target.commment. true);
+//     alert("Please enter your comment");
+//   }
+// } else if (event.target.comment.value == "") {
+//   errorResponse(event.target.comment, true);
+//   errorResponse(event.target.name, false);
+//   alert("Please enter your comment");
+// } else {
+//   errorResponse(event.target.name, false);
+//   errorResponse(event.target.commment, false);
+//   addingComment();
+// }
