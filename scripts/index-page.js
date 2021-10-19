@@ -5,7 +5,12 @@ const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=${apiKey}`;
 axios
   .get(apiURL)
   .then((result) => {
-    console.log(displayComment(result.data));
+    
+    for (i = 0; i < comments.length; i++) {
+      displayComment(result.data[i]);
+     
+    };
+ 
   })
   .catch((error) => {
     console.log(error);
@@ -19,26 +24,25 @@ console.log(commentsContainer);
 
 
 
-const user = {
+
     
-    comments: [
+    comments = [
       {
         name: "Connor Walton",
         timestamp: "02/17/2021",
-        content: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
       },
       {
         name: "Emilie Beach",
         timestamp: "01/09/2021",
-        content: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
       },
       {
         name: "Miles Acosta",
         timestamp: "12/20/2020",
-        content: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough",
+        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough",
       },
-    ],
-  };
+    ]
 
    
     function displayComment(cm) {
@@ -73,19 +77,27 @@ const user = {
         let userTimeStamp = document.createElement("div");
         userTimeStamp.classList.add("comments__timestamp");
         userTimeStamp.innerText = cm.timestamp;
+        let timeStamp = userTimeStamp.innerText;
+        let date = new Date(timeStamp * 1.00001);
+        // date.toLocaleString();
+        let dateString = date.toLocaleString().split(',')[0];
+        console.log(dateString);
+        userTimeStamp.innerText = dateString;
         commentContentTop.appendChild(userTimeStamp);
     
     
         let commentText = document.createElement("p");
         commentText.classList.add("comments__text");
-        commentText.innerText = cm.content;
+        commentText.innerText = cm.comment;
         commentContent.appendChild(commentText);
     }
 
-    for (i = 0; i < user.comments.length; i++) {
-        displayComment(user.comments[i]);
+    /* Commented out hard-coded table rows to give room for api extraction */
+
+    // for (i = 0; i < comments.length; i++) {
+    //     displayComment(comments[i]);
       
-    };
+    // };
 
 const formEl = document.getElementById("form");
 const nameInput = document.getElementById("name");
@@ -105,8 +117,8 @@ const newComment = {
 }
 function addingComment () {
   commentsContainer.innerHTML = "";
-  user.comments.unshift(newComment);
-  user.comments.forEach(comment => {
+  comments.unshift(newComment);
+  comments.forEach(comment => {
     displayComment(comment);
   });
 }
@@ -135,9 +147,9 @@ formEl.addEventListener ("submit", (event) => {
       errorResponse(nameInput, false);
       errorResponse(textInput, false);
       commentsContainer.innerHTML = "";
-      user.comments.unshift(newComment);
+      comments.unshift(newComment);
       console.log(newComment);
-      user.comments.forEach(comment => {
+      comments.forEach(comment => {
       displayComment(comment);
     })  
     }
