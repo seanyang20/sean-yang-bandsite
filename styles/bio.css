@@ -747,7 +747,7 @@ textarea::placeholder {
   }
 }
 
-button {
+#addComment {
   height: 2.5rem;
   background-color: #323232;
   width: 100%;
@@ -757,7 +757,7 @@ button {
   margin: 1rem 0 0 0;
 }
 @media screen and (min-width: 768px) {
-  button {
+  #addComment {
     width: 25%;
     margin: 1rem 0 0 auto;
   }
@@ -902,6 +902,34 @@ button {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
+}
+.comments__content-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  padding: 0 0 1rem 0;
+}
+
+.likebutton {
+  width: 2rem;
+  height: 1rem;
+  color: #FFFFFF;
+  margin: 0 1rem 0 0;
+  font-family: "Avenir Next Regular";
+  background-color: #323232;
+  border-radius: 0.25rem;
+}
+
+.deletebutton {
+  width: 2.8rem;
+  height: 1rem;
+  color: #FFFFFF;
+  font-family: "Avenir Next Regular";
+  background-color: #323232;
+  border-radius: 0.25rem;
 }
 
 .selected {

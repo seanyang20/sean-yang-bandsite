@@ -158,6 +158,24 @@ console.log(commentsContainer);
         commentText.classList.add("comments__text");
         commentText.innerText = cm.comment;
         commentContent.appendChild(commentText);
+
+        // creating bottom div for like and delete button 
+        commentContentBottom = document.createElement('div');
+        commentContentBottom.classList.add('comments__content-bottom');
+        commentContent.appendChild(commentContentBottom);
+
+        // creating like button
+        likeButton = document.createElement('button');
+        likeButton.classList.add('likebutton');
+        likeButton.innerText = 'Like';
+        commentContentBottom.appendChild(likeButton);
+ 
+         // creating delete button
+         deleteButton = document.createElement('button');
+         deleteButton.classList.add('deletebutton');
+         deleteButton.innerText = 'Delete';
+         commentContentBottom.appendChild(deleteButton);
+
     }
 
   //   function displayAddedComment(cm) {

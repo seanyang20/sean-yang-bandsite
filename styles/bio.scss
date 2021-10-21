@@ -270,7 +270,8 @@ textarea {
         }
     }
 }
-button {
+// button
+#addComment {
     height: 2.5rem;
     background-color: $black;
     width: 100%;
@@ -407,6 +408,30 @@ button {
             @include text-style (.875rem, 1.375rem);
         }
     }
+    &__content-bottom {
+        @include flex(row, flex-start, center);
+        width: 100%;
+        text-align: left;
+        padding: 0 0 1rem 0;
+        
+    }
+}
+.likebutton{
+    width: 2rem;
+    height: 1rem;
+    color: $white;
+    margin: 0 1rem 0 0;
+    font-family: "Avenir Next Regular";
+    background-color: $black;
+    border-radius: .25rem;
+}
+.deletebutton {
+    width: 2.8rem;
+    height: 1rem;
+    color: $white;
+    font-family: "Avenir Next Regular";
+    background-color: $black;
+    border-radius: .25rem;
 }
 .selected {
     border: 1px solid #D22D2D;
