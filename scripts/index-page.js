@@ -112,7 +112,9 @@ console.log(commentsContainer);
       },
     ]
 
-   
+    constlikeButton = document.createElement('button');
+    deleteButton = document.createElement('button');
+
     function displayComment(cm) {
         
 
@@ -169,7 +171,25 @@ console.log(commentsContainer);
         likeButton.classList.add('likebutton');
         likeButton.innerText = 'Like';
         commentContentBottom.appendChild(likeButton);
- 
+
+        //creating counter for like button
+        likeCounter = document.createElement('p');
+        likeCounter.classList.add('counter');
+        likeCounter.innerText = 0;
+        commentContentBottom.appendChild(likeCounter);
+
+        likeButton.addEventListener('click', (event) => {
+          event.preventDefault();
+          let likeButtonURL = `https://project-1-api.herokuapp.com/comments/${comment.id}/like?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`;
+          axios
+            .put(likeButtonURL,{ 
+                
+            })
+            .catch((error) => {
+              console.log(error);
+            })
+        })
+        
          // creating delete button
          deleteButton = document.createElement('button');
          deleteButton.classList.add('deletebutton');
@@ -347,7 +367,20 @@ function errorResponse (field, error) {
     field.style.borderColor = "#D22D2D";
   } 
  }
- 
+//  const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`;
+// Like Button click 
+
+// likeButton.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   let likeButtonURL = `https://project-1-api.herokuapp.com/comments/${comment.id}/like?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`;
+//   axios
+//     .put(likeButtonURL,{ 
+        
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     })
+// })
 
 // function validateForm() {
 //   let x = document.forms["form"]["name"].value;
