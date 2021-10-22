@@ -84,6 +84,7 @@ tableBody.appendChild(thead);
 
 // Creating th tag for each key
 let data = Object.keys(shows[0]);
+console.log(data);
 for (let key of data) {
     // Adding th tag to thead element
     if (key != "button"){

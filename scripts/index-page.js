@@ -23,9 +23,7 @@ console.log(commentsContainer);
       },
     ]
 
-    constlikeButton = document.createElement('button');
-    deleteButton = document.createElement('button');
-
+  
     function displayComment(cm) {
         
 
@@ -73,18 +71,19 @@ console.log(commentsContainer);
         commentContent.appendChild(commentText);
 
         // creating bottom div for like and delete button 
-        commentContentBottom = document.createElement('div');
+        let commentContentBottom = document.createElement('div');
         commentContentBottom.classList.add('comments__content-bottom');
         commentContent.appendChild(commentContentBottom);
 
         // creating like button
-        likeButton = document.createElement('button');
+        let likeButton = document.createElement('button');
         likeButton.classList.add('likebutton');
         likeButton.innerText = 'Like';
         commentContentBottom.appendChild(likeButton);
 
+        
         //creating counter for like button
-        likeCounter = document.createElement('p');
+        let likeCounter = document.createElement('p');
         likeCounter.classList.add('counter');
         likeCounter.innerText = 0;
         commentContentBottom.appendChild(likeCounter);
@@ -93,13 +92,27 @@ console.log(commentsContainer);
    
         
          // creating delete button
-         deleteButton = document.createElement('button');
+         let deleteButton = document.createElement('button');
          deleteButton.classList.add('deletebutton');
          deleteButton.innerText = 'Delete';
          commentContentBottom.appendChild(deleteButton);
 
-    }
+         console.log(likeButton);
 
+         likeButton.addEventListener('click', () => {
+            console.log(cm.id);
+            AddLike(cm.id);
+         })
+    }
+   
+function AddLike (id) {
+  
+  axios
+    .put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`)
+    .then(result => {
+      console.log(result.data);
+    })
+}
 
 const formEl = document.getElementById("form");
 const nameInput = document.getElementById("name");
@@ -131,7 +144,7 @@ const callingAxios = async () => {
      
       for (i = 0; i < result.data.length; i++) {
         displayComment(result.data[i]);
-        console.log(result.data[i]);
+        console.log(displayComment(result.data[i]));
       };
    
     })
@@ -195,24 +208,23 @@ function errorResponse (field, error) {
   } 
  }
 
- function likesButtonEvent (){
- var likesButton = document.querySelector('likebutton');
 
- likesButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  let likeButtonURL = `https://project-1-api.herokuapp.com/comments/${id}/like?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`;
-  let id = event.target.closest('.likebutton').getAttribute('id');
-  console.log(id);
-  axios
-    .put(likeButtonURL,{ 
+
+//  likesButton.addEventListener('click', (event) => {
+//   event.preventDefault();
+//   let likeButtonURL = `https://project-1-api.herokuapp.com/comments/${id}/like?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`;
+//   let id = event.target.closest('.likebutton').getAttribute('id');
+//   console.log(id);
+//   axios
+//     .put(likeButtonURL,{ 
       
-    })
-    .then((result) => {
-      result.find()
-    }
-    )
-    .catch((error) => {
-      console.log(error);
-    })
-})
- }
+//     })
+//     .then((result) => {
+//       result.find()
+//     }
+//     )
+//     .catch((error) => {
+//       console.log(error);
+//     })
+// })
+ 
