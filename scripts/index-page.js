@@ -143,8 +143,8 @@ const callingAxios = async () => {
     .then((result) => {
      
       for (i = 0; i < result.data.length; i++) {
-        displayComment(result.data[i]);
-        console.log(displayComment(result.data[i]));
+        displayComment(result.data[i]);               // this gets whatever we have to start and displays it
+        
       };
    
     })
@@ -153,7 +153,20 @@ const callingAxios = async () => {
     }
     )
   }
-  callingAxios();
+  callingAxios();     // displays it first // when you click submit it displays a second time
+  // const callingAxios2 = async () => {
+  //   await axios
+  //     .get(apiURL)
+  //     .then((result) => {
+  //       console.log(result.data[result.data.length - 1]);  // accesses last object in api array
+  //       postedComment = result.data[result.data.length - 1];
+  //       displayComment(postedComment);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     }
+  //     )
+  //   }
 
 formEl.addEventListener ("submit", async (event) => {     
     event.preventDefault();
@@ -179,18 +192,16 @@ formEl.addEventListener ("submit", async (event) => {
     } else {
       errorResponse(nameInput, false);
       errorResponse(textInput, false);
-      commentsContainer.innerHTML = "";
+      commentsContainer.innerHTML = "";       // this should get rid of the container comments upon click
       console.log(nameInput.value);
       await axios
       .post(apiURL, {
         "name": nameInput.value,
-        // "timestamp": submitTime(),
         "comment": textInput.value
       })
       .then(result => {
-        // displayAddedComment(result.data);
         console.log(result);
-        callingAxios();
+        callingAxios();                         
       })
       .catch(error => {
         console.log(error);
@@ -199,7 +210,6 @@ formEl.addEventListener ("submit", async (event) => {
       
     }
     
-  
    formEl.reset();  
 })
 function errorResponse (field, error) {
@@ -210,21 +220,4 @@ function errorResponse (field, error) {
 
 
 
-//  likesButton.addEventListener('click', (event) => {
-//   event.preventDefault();
-//   let likeButtonURL = `https://project-1-api.herokuapp.com/comments/${id}/like?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`;
-//   let id = event.target.closest('.likebutton').getAttribute('id');
-//   console.log(id);
-//   axios
-//     .put(likeButtonURL,{ 
-      
-//     })
-//     .then((result) => {
-//       result.find()
-//     }
-//     )
-//     .catch((error) => {
-//       console.log(error);
-//     })
-// })
  
