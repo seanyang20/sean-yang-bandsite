@@ -137,24 +137,24 @@ const newComment = {
 //     displayComment(comment);
 //   });
 // }
-const callingAxios = async () => {
-  await axios
-    .get(apiURL)
-    .then((result) => {
+// const callingAxios = async () => {
+//   await axios
+//     .get(apiURL)
+//     .then((result) => {
      
-      for (i = 0; i < result.data.length; i++) {
-        displayComment(result.data[i]);               // this gets whatever we have to start and displays it
+//       for (i = 0; i < result.data.length; i++) {
+//         displayComment(result.data[i]);               // this gets whatever we have to start and displays it
         
-      };
+//       };
    
-    })
-    .catch((error) => {
-      console.log(error);
-    }
-    )
-  }
-  callingAxios();     // displays it first // when you click submit it displays a second time
-  const callingAxios2 = async () => {
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     }
+//     )
+//   }
+//   // callingAxios();     // displays it first // when you click submit it displays a second time
+  const callingAxios = async () => {
     await axios
       .get(apiURL)
       .then((result) => {
@@ -179,7 +179,7 @@ const callingAxios = async () => {
       }
       )
     }
-
+callingAxios();
 formEl.addEventListener ("submit", async (event) => {     
     event.preventDefault();
 
@@ -214,7 +214,7 @@ formEl.addEventListener ("submit", async (event) => {
       .then(result => {
         console.log(result);
         console.log(result.data);
-        callingAxios2();                         
+        callingAxios();                         
       })
       .catch(error => {
         console.log(error);
