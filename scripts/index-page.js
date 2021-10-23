@@ -154,19 +154,31 @@ const callingAxios = async () => {
     )
   }
   callingAxios();     // displays it first // when you click submit it displays a second time
-  // const callingAxios2 = async () => {
-  //   await axios
-  //     .get(apiURL)
-  //     .then((result) => {
-  //       console.log(result.data[result.data.length - 1]);  // accesses last object in api array
-  //       postedComment = result.data[result.data.length - 1];
-  //       displayComment(postedComment);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     }
-  //     )
-  //   }
+  const callingAxios2 = async () => {
+    await axios
+      .get(apiURL)
+      .then((result) => {
+        console.log(result.data);
+        commentArray = result.data;             // putting it in an array
+        console.log(commentArray);
+                                           
+        postedComment = commentArray.pop();    // removing and returning last element of array
+        console.log(postedComment);
+        console.log(commentArray.unshift(postedComment));   // adds posted comment to the beginning of array
+        console.log(commentArray);
+
+        for (i = 0; i < commentArray.length; i++) {
+          displayComment(commentArray[i]);               
+          
+        };
+    
+     
+      })
+      .catch((error) => {
+        console.log(error);
+      }
+      )
+    }
 
 formEl.addEventListener ("submit", async (event) => {     
     event.preventDefault();
@@ -201,7 +213,8 @@ formEl.addEventListener ("submit", async (event) => {
       })
       .then(result => {
         console.log(result);
-        callingAxios();                         
+        console.log(result.data);
+        callingAxios2();                         
       })
       .catch(error => {
         console.log(error);
