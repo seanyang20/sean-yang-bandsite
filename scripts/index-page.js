@@ -1,5 +1,5 @@
 // const apiKey = "4beb74cb-bea4-450b-be89-9eeb389e2102"
-const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=d8d54b81-e8cd-4f95-8a56-d6c0480cde10`;
+const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=7e365210-f6af-4c5e-b7d2-2c43715f7534`;
 
 
 const commentsContainer = document.querySelector(".comments__container");
@@ -97,13 +97,19 @@ console.log(commentsContainer);
 
          
 
-         likeButton.addEventListener('click', () => {
+         likeButton.addEventListener('click', (event) => {
+            event.preventDefault();
+            console.log(event);
             console.log(cm.id);
+            commentsContainer.innerHTML = ""; 
             addLike(cm.id);
          })
 
-         deleteButton.addEventListener('click', () => {
+         deleteButton.addEventListener('click', (event) => {
+           event.preventDefault();
+           console.log(event);
            console.log(cm);
+           commentsContainer.innerHTML = ""; 
            deleteComment(cm.id);
          })
     }
@@ -111,7 +117,7 @@ console.log(commentsContainer);
 function addLike (id) {
   
   axios
-    .put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=d8d54b81-e8cd-4f95-8a56-d6c0480cde10`)
+    .put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=7e365210-f6af-4c5e-b7d2-2c43715f7534`)
     .then(result => {
     
       console.log(result);
@@ -130,7 +136,7 @@ function addLike (id) {
 function deleteComment (id) {
 
   axios 
-    .delete(`https://project-1-api.herokuapp.com/comments/${id}/?api_key=d8d54b81-e8cd-4f95-8a56-d6c0480cde10`)
+    .delete(`https://project-1-api.herokuapp.com/comments/${id}/?api_key=7e365210-f6af-4c5e-b7d2-2c43715f7534`)
     .then(result => {
       console.log(result.data);
       callingAxios();
@@ -201,12 +207,12 @@ const newComment = {
         // console.log(commentArray);
         // console.log(commentArray.flat());
         sortedCommentArray = commentArray.flat();
-        console.log(sortedCommentArray);              // this includes the updated likes as well
+        console.log(sortedCommentArray);              // this includes the updated likes and deleted comments as well
 
         // displayComment(sortedCommentArray[i]);
 
          for (i = 0; i < sortedCommentArray.length; i++) {
-          displayComment(sortedCommentArray[i]);               
+          displayComment(sortedCommentArray[i]);          // why is this displaying on refresh?        
         };
         
         
