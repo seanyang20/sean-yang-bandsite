@@ -85,32 +85,58 @@ console.log(commentsContainer);
         //creating counter for like button
         let likeCounter = document.createElement('p');
         likeCounter.classList.add('counter');
-        likeCounter.innerText = 0;
+        likeCounter.innerText = cm.likes;
         commentContentBottom.appendChild(likeCounter);
 
-        
-   
-        
+
          // creating delete button
          let deleteButton = document.createElement('button');
          deleteButton.classList.add('deletebutton');
          deleteButton.innerText = 'Delete';
          commentContentBottom.appendChild(deleteButton);
 
-         console.log(likeButton);
+         
 
          likeButton.addEventListener('click', () => {
             console.log(cm.id);
-            AddLike(cm.id);
+            addLike(cm.id);
+         })
+
+         deleteButton.addEventListener('click', () => {
+           console.log(cm);
+           deleteComment(cm.id);
          })
     }
    
-function AddLike (id) {
+function addLike (id) {
   
   axios
-    .put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`)
+    .put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=d8d54b81-e8cd-4f95-8a56-d6c0480cde10`)
+    .then(result => {
+    
+      console.log(result);
+      callingAxios();
+      // for (i = 0; i < sortedCommentArray.length; i++) {
+      //   displayComment(sortedCommentArray[i]);               
+        
+      // };
+      
+      
+    })
+    .error(error => {
+      console.log(error);
+    })
+}
+function deleteComment (id) {
+
+  axios 
+    .delete(`https://project-1-api.herokuapp.com/comments/${id}/?api_key=d8d54b81-e8cd-4f95-8a56-d6c0480cde10`)
     .then(result => {
       console.log(result.data);
+      callingAxios();
+    })
+    .error(error => {
+      console.log(error);
     })
 }
 
@@ -175,15 +201,22 @@ const newComment = {
         // console.log(commentArray);
         // console.log(commentArray.flat());
         sortedCommentArray = commentArray.flat();
-        console.log(sortedCommentArray);
+        console.log(sortedCommentArray);              // this includes the updated likes as well
 
         // displayComment(sortedCommentArray[i]);
 
          for (i = 0; i < sortedCommentArray.length; i++) {
           displayComment(sortedCommentArray[i]);               
-          
         };
         
+        
+        // console.log(result.data.likes);               // contains number of likes
+        // console.log(result.data.id);                  // returns the id of the clicked like comment single 
+        // let likeCounter = document.querySelectorAll('.counter');
+        // console.log(likeCounter);
+        // console.log(likeCounter.innerHTML);
+
+
         // postedComment = commentArray.pop();    // removing and returning last element of array
         // console.log(postedComment);
         // console.log(commentArray.unshift(postedComment));   // adds posted comment to the beginning of array
