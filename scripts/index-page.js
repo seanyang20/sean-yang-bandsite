@@ -1,5 +1,5 @@
 // const apiKey = "4beb74cb-bea4-450b-be89-9eeb389e2102"
-const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=7e365210-f6af-4c5e-b7d2-2c43715f7534`;
+const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=76856582-8ae7-439d-9487-8109eb13252e`;
 
 
 const commentsContainer = document.querySelector(".comments__container");
@@ -95,21 +95,19 @@ console.log(commentsContainer);
          deleteButton.innerText = 'Delete';
          commentContentBottom.appendChild(deleteButton);
 
-         
-
          likeButton.addEventListener('click', (event) => {
-            event.preventDefault();
+           
             console.log(event);
             console.log(cm.id);
-            commentsContainer.innerHTML = ""; 
+            commentsContainer.innerHTML = "";               // this is needed to get like counter to actually increment
             addLike(cm.id);
          })
 
          deleteButton.addEventListener('click', (event) => {
-           event.preventDefault();
+          
            console.log(event);
            console.log(cm);
-           commentsContainer.innerHTML = ""; 
+           commentsContainer.innerHTML = "";                // this is needed to get delete to show in real time
            deleteComment(cm.id);
          })
     }
@@ -117,7 +115,7 @@ console.log(commentsContainer);
 function addLike (id) {
   
   axios
-    .put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=7e365210-f6af-4c5e-b7d2-2c43715f7534`)
+    .put(`https://project-1-api.herokuapp.com/comments/${id}/like?api_key=76856582-8ae7-439d-9487-8109eb13252e`)
     .then(result => {
     
       console.log(result);
@@ -136,7 +134,7 @@ function addLike (id) {
 function deleteComment (id) {
 
   axios 
-    .delete(`https://project-1-api.herokuapp.com/comments/${id}/?api_key=7e365210-f6af-4c5e-b7d2-2c43715f7534`)
+    .delete(`https://project-1-api.herokuapp.com/comments/${id}/?api_key=76856582-8ae7-439d-9487-8109eb13252e`)
     .then(result => {
       console.log(result.data);
       callingAxios();
