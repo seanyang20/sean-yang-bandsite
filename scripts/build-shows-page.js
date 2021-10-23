@@ -151,7 +151,17 @@ const displayShowsTable = (obj) => {
     tableRow.appendChild(tableCellButton);
   
     tableBody.appendChild(tableRow);
-  }
+
+ 
+      tableRow.addEventListener("click", () => {
+       
+        // for (let j = 0; j < tableRows[i].cells.length; j++) {
+          tableRow.classList.toggle("selected");
+        // }
+      })
+    }
+
+  
   
 
   /* Commented out hard-coded table rows to give room for api extraction */
@@ -159,16 +169,6 @@ const displayShowsTable = (obj) => {
   // for (let i = 0; i < shows.length; i++) {
   //   displayShowsTable(shows[i]);
   // }  
-
-const tableRows = document.querySelectorAll("tr");
-
-for (let i = 0; i < tableRows.length; i++) {
-  tableRows[i].addEventListener("click", (event) => {
-    // for (let j = 0; j < tableRows[i].cells.length; j++) {
-      tableRows[i].classList.toggle("selected");
-    // }
-  })
-}
 
 
 //     function displayShows(sw) {
