@@ -1,5 +1,5 @@
 // const apiKey = "4beb74cb-bea4-450b-be89-9eeb389e2102"
-const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=1276acf1-92b5-403f-88a6-3c501e8b6857`;
+const apiURL = `https://project-1-api.herokuapp.com/comments?api_key=d8d54b81-e8cd-4f95-8a56-d6c0480cde10`;
 
 
 const commentsContainer = document.querySelector(".comments__container");
@@ -161,16 +161,38 @@ const newComment = {
         console.log(result.data);
         commentArray = result.data;             // putting it in an array
         console.log(commentArray);
-                                           
-        postedComment = commentArray.pop();    // removing and returning last element of array
-        console.log(postedComment);
-        console.log(commentArray.unshift(postedComment));   // adds posted comment to the beginning of array
+        arrayStorage = [];
+        for (i=3; i < commentArray.length; i=3){
+          console.log(commentArray);
+          postedComment = commentArray.pop();
+          // console.log(arrayStorage.push(postedComment));
+          arrayStorage.push(postedComment);
+        }
+        console.log(arrayStorage);
         console.log(commentArray);
+        // console.log(commentArray.unshift(arrayStorage));
+        commentArray.unshift(arrayStorage);
+        // console.log(commentArray);
+        // console.log(commentArray.flat());
+        sortedCommentArray = commentArray.flat();
+        console.log(sortedCommentArray);
 
-        for (i = 0; i < commentArray.length; i++) {
-          displayComment(commentArray[i]);               
+        // displayComment(sortedCommentArray[i]);
+
+         for (i = 0; i < sortedCommentArray.length; i++) {
+          displayComment(sortedCommentArray[i]);               
           
         };
+        
+        // postedComment = commentArray.pop();    // removing and returning last element of array
+        // console.log(postedComment);
+        // console.log(commentArray.unshift(postedComment));   // adds posted comment to the beginning of array
+        // console.log(commentArray);
+
+        // for (i = 0; i < commentArray.length; i++) {
+        //   displayComment(commentArray[i]);               
+          
+        // };
     
      
       })
