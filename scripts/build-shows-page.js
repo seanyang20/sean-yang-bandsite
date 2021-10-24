@@ -26,7 +26,6 @@ axios
       console.log(show);
       displayShowsTable(show);
     }))
-   
   })
   .catch((error) => {
     console.log(error);

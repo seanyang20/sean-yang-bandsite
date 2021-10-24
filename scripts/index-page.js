@@ -165,6 +165,7 @@ const callingAxios = async () => {
     )
 }
 callingAxios();         // the first instance of getting the api and displaying comments 
+
 // Creating the form functionality upon clicking submit button to create a new comment 
 formEl.addEventListener ("submit", async (event) => {     
   event.preventDefault();            // prevents browser from submitting upon refresh
