@@ -193,8 +193,6 @@ h1 {
     @include flex(column, center, center);
     padding: 0 1rem 0 1rem;
     
-    // vertical-align: top;   
-    // flex-wrap: wrap;
         @include tablet {
             @include flex(column, flex-start, flex-start);
             padding: 0 2.25rem 0 2.25rem;

@@ -270,7 +270,7 @@ textarea {
         }
     }
 }
-// button
+
 #addComment {
     height: 2.5rem;
     background-color: $black;
@@ -416,6 +416,9 @@ textarea {
         
     }
 }
+
+/* Like and Delete Button for Each added comment */
+
 .likebutton{
     width: 2rem;
     height: 1rem;

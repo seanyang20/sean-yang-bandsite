@@ -913,6 +913,7 @@ textarea::placeholder {
   padding: 0 0 1rem 0;
 }
 
+/* Like and Delete Button for Each added comment */
 .likebutton {
   width: 2rem;
   height: 1rem;
